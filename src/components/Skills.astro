@@ -8,20 +8,20 @@ const groups = [
 ];
 ---
 
-<section id="skills" class="scroll-mt-16 border-b border-[var(--border)] py-20 md:py-28">
+<section id="skills" class="scroll-mt-16 border-b border-[var(--border)] py-24 md:py-32">
   <div class="mx-auto max-w-6xl px-6">
-    <div class="flex items-baseline justify-between border-b border-[var(--border)] pb-4">
-      <h2 class="font-display text-3xl font-medium tracking-tight text-[var(--text)] md:text-[44px]">
-        Things I know how to work with
-      </h2>
-      <span class="font-mono-ui hidden text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase sm:inline">I'm less interested in collecting skills than using whatever is needed to finish the project</span>
-    </div>
+    <h2 class="font-display text-3xl font-semibold tracking-tight text-[var(--text)] md:text-[44px]">
+      Things I know how to work with
+    </h2>
+    <p class="mt-3 max-w-[52ch] text-lg text-[var(--text-muted)]">
+      I'm less interested in collecting skills than using whatever is needed to finish the project.
+    </p>
 
-    <div class="mt-4 flex flex-col">
+    <div class="mt-10 flex flex-col divide-y divide-[var(--border)]">
       {
         groups.map((group) => (
-          <div class="grid gap-3 border-b border-[var(--border)] py-6 md:grid-cols-[220px_1fr] md:items-baseline md:gap-8">
-            <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">{group.name}</p>
+          <div class="grid gap-3 py-6 md:grid-cols-[220px_1fr] md:items-baseline md:gap-8">
+            <p class="font-semibold text-[var(--text)]">{group.name}</p>
             <p class="text-base leading-[1.7] text-[var(--text-muted)]">{group.tools}</p>
           </div>
         ))

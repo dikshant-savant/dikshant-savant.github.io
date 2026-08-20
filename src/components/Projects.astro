@@ -19,10 +19,10 @@ const outboundParagraphs = [
 ];
 ---
 
-<section id="work" class="scroll-mt-16 border-b border-[var(--border)] py-20 md:py-28">
+<section id="work" class="scroll-mt-16 border-b border-[var(--border)] py-24 md:py-32">
   <div class="mx-auto max-w-6xl px-6">
-    <div class="flex items-baseline justify-between border-b border-[var(--border)] pb-4">
-      <h2 class="font-display text-3xl font-medium tracking-tight text-[var(--text)] md:text-[44px]">
+    <div class="flex items-baseline justify-between">
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-[var(--text)] md:text-[44px]">
         Selected work
       </h2>
       <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase">05 projects</span>
@@ -32,11 +32,11 @@ const outboundParagraphs = [
       <a
         id="p-nmab"
         href="#case-flagship"
-        class="group flex scroll-mt-24 flex-col gap-5 border border-[var(--border)] bg-[var(--ink)] p-8 text-[var(--ink-text)] transition-colors hover:border-[var(--ink-accent)] md:p-10"
+        class="group flex scroll-mt-24 flex-col gap-5 rounded-2xl bg-[var(--ink)] p-8 text-[var(--ink-text)] transition-colors hover:bg-[#191a1d] md:p-10"
       >
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <h3 class="font-display text-3xl font-medium md:text-4xl">NeverMissABooking&trade;</h3>
-          <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--ink-text-muted)] uppercase">Read the case study &rarr;</span>
+          <h3 class="font-display text-3xl font-semibold md:text-4xl">NeverMissABooking&trade;</h3>
+          <span class="text-sm text-[var(--ink-accent)] transition-transform group-hover:translate-x-1">Read the case study &rarr;</span>
         </div>
         <p class="font-display text-xl leading-snug text-[var(--ink-text)] md:text-2xl">
           A system for businesses that miss calls and lose customers because of it.
@@ -54,7 +54,7 @@ const outboundParagraphs = [
         </div>
         <div class="flex flex-wrap gap-2 pt-1">
           {["GoHighLevel", "Claude", "Twilio", "Python"].map((tag) => (
-            <span class="font-mono-ui border border-[var(--ink-border)] px-2.5 py-1 text-[11px] text-[var(--ink-text-muted)]">
+            <span class="font-mono-ui rounded-full border border-[var(--ink-border)] px-3 py-1 text-[11px] text-[var(--ink-text-muted)]">
               {tag}
             </span>
           ))}
@@ -64,11 +64,11 @@ const outboundParagraphs = [
       <a
         id="p-outbound"
         href="#case"
-        class="group flex scroll-mt-24 flex-col gap-5 border border-[var(--border)] bg-[var(--surface)] p-8 transition-colors hover:border-[var(--accent)] md:p-10"
+        class="group flex scroll-mt-24 flex-col gap-5 rounded-2xl bg-[var(--surface-alt)] p-8 transition-colors hover:bg-[var(--surface)] md:p-10"
       >
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <h3 class="font-display text-3xl font-medium text-[var(--text)] md:text-4xl">Outbound Lead Pipeline</h3>
-          <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase">Read the case study &rarr;</span>
+          <h3 class="font-display text-3xl font-semibold text-[var(--text)] md:text-4xl">Outbound Lead Pipeline</h3>
+          <span class="text-sm text-[var(--accent)] transition-transform group-hover:translate-x-1">Read the case study &rarr;</span>
         </div>
         <p class="font-display text-xl leading-snug text-[var(--text)] md:text-2xl">
           I had a big list of businesses. The problem was figuring out which contacts were actually safe to email.
@@ -87,7 +87,7 @@ const outboundParagraphs = [
         </div>
         <div class="flex flex-wrap gap-2 pt-1">
           {["Python", "Outscraper", "MillionVerifier", "Claude"].map((tag) => (
-            <span class="font-mono-ui border border-[var(--border)] px-2.5 py-1 text-[11px] text-[var(--text-muted)]">
+            <span class="font-mono-ui rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[11px] text-[var(--text-muted)]">
               {tag}
             </span>
           ))}
@@ -100,13 +100,13 @@ const outboundParagraphs = [
           href="https://slickonboard.com"
           target="_blank"
           rel="noopener"
-          class="group flex scroll-mt-24 flex-col border border-[var(--border)] bg-[var(--surface)]"
+          class="group flex scroll-mt-24 flex-col overflow-hidden rounded-2xl bg-[var(--surface-alt)] transition-shadow hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
         >
-          <div class="aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
+          <div class="aspect-[16/10] overflow-hidden">
             <Image src={slickShot} alt="SlickOnboard marketing homepage" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
           <div class="flex flex-col gap-2.5 p-6">
-            <h4 class="font-display text-xl font-medium text-[var(--text)]">SlickOnboard</h4>
+            <h4 class="font-display text-xl font-semibold text-[var(--text)]">SlickOnboard</h4>
             <p class="font-medium text-sm text-[var(--text)]">I got tired of doing the same client onboarding steps over and over.</p>
             <p class="text-sm leading-relaxed text-[var(--text-muted)]">
               So I built a system for it. Once a client signs up, the
@@ -116,7 +116,7 @@ const outboundParagraphs = [
             </p>
             <div class="flex flex-wrap gap-1.5 pt-0.5">
               {["n8n", "OpenAI", "Supabase"].map((tag) => (
-                <span class="font-mono-ui border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--text-muted)]">
+                <span class="font-mono-ui rounded-full border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1 text-[10px] text-[var(--text-muted)]">
                   {tag}
                 </span>
               ))}
@@ -129,13 +129,13 @@ const outboundParagraphs = [
           href="https://ourinneruniverse.com"
           target="_blank"
           rel="noopener"
-          class="group flex scroll-mt-24 flex-col border border-[var(--border)] bg-[var(--surface)]"
+          class="group flex scroll-mt-24 flex-col overflow-hidden rounded-2xl bg-[var(--surface-alt)] transition-shadow hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
         >
-          <div class="aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
+          <div class="aspect-[16/10] overflow-hidden">
             <Image src={ouShot} alt="Our Inner Universe homepage" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
           <div class="flex flex-col gap-2.5 p-6">
-            <h4 class="font-display text-xl font-medium text-[var(--text)]">Our Inner Universe</h4>
+            <h4 class="font-display text-xl font-semibold text-[var(--text)]">Our Inner Universe</h4>
             <p class="font-medium text-sm text-[var(--text)]">I wanted to see if I could build thousands of useful pages without writing thousands of pages.</p>
             <p class="text-sm leading-relaxed text-[var(--text-muted)]">
               The answer was yes, but it took more work than just asking AI
@@ -147,7 +147,7 @@ const outboundParagraphs = [
             </p>
             <div class="flex flex-wrap gap-1.5 pt-0.5">
               {["Astro", "Claude", "Programmatic SEO"].map((tag) => (
-                <span class="font-mono-ui border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--text-muted)]">
+                <span class="font-mono-ui rounded-full border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1 text-[10px] text-[var(--text-muted)]">
                   {tag}
                 </span>
               ))}
@@ -160,13 +160,13 @@ const outboundParagraphs = [
           href="https://www.amazon.com/TinkleTree-Premium-Spiritual-Mandala-Chime/dp/B0FPWTWJQ5"
           target="_blank"
           rel="noopener"
-          class="group flex scroll-mt-24 flex-col border border-[var(--border)] bg-[var(--surface)]"
+          class="group flex scroll-mt-24 flex-col overflow-hidden rounded-2xl bg-[var(--surface-alt)] transition-shadow hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
         >
-          <div class="aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
+          <div class="aspect-[16/10] overflow-hidden">
             <Image src={tinkleShot} alt="TinkleTree Co product listing on Amazon" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
           <div class="flex flex-col gap-2.5 p-6">
-            <h4 class="font-display text-xl font-medium text-[var(--text)]">TinkleTree Co</h4>
+            <h4 class="font-display text-xl font-semibold text-[var(--text)]">TinkleTree Co</h4>
             <p class="font-medium text-sm text-[var(--text)]">I built and launched my own product brand.</p>
             <p class="text-sm leading-relaxed text-[var(--text-muted)]">
               That meant doing a bit of everything: the product, supplier
@@ -177,7 +177,7 @@ const outboundParagraphs = [
             </p>
             <div class="flex flex-wrap gap-1.5 pt-0.5">
               {["Shopify", "Klaviyo", "Amazon"].map((tag) => (
-                <span class="font-mono-ui border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--text-muted)]">
+                <span class="font-mono-ui rounded-full border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1 text-[10px] text-[var(--text-muted)]">
                   {tag}
                 </span>
               ))}
@@ -192,15 +192,15 @@ const outboundParagraphs = [
       href="https://suresku.com/"
       target="_blank"
       rel="noopener"
-      class="group mt-6 flex scroll-mt-24 flex-col overflow-hidden border border-[var(--border)] bg-[var(--surface)] sm:flex-row"
+      class="group mt-6 flex scroll-mt-24 flex-col overflow-hidden rounded-2xl bg-[var(--surface-alt)] transition-shadow hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] sm:flex-row"
     >
-      <div class="aspect-[12/5] shrink-0 overflow-hidden border-b border-[var(--border)] sm:aspect-auto sm:w-[42%] sm:border-r sm:border-b-0">
+      <div class="aspect-[12/5] shrink-0 overflow-hidden sm:aspect-auto sm:w-[42%]">
         <Image src={sureskuShot} alt="sureSKU Amazon review-mining dashboard" width={800} height={330} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
       </div>
       <div class="flex flex-1 flex-col justify-center gap-2.5 p-7">
         <div class="flex items-center justify-between gap-3">
-          <h3 class="font-display text-2xl font-medium text-[var(--text)]">sureSKU</h3>
-          <span class="font-mono-ui shrink-0 text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">Beta</span>
+          <h3 class="font-display text-2xl font-semibold text-[var(--text)]">sureSKU</h3>
+          <span class="font-mono-ui shrink-0 rounded-full bg-[var(--accent-soft)] px-2.5 py-1 text-[11px] tracking-[0.05em] text-[var(--accent)] uppercase">Beta</span>
         </div>
         <p class="max-w-[56ch] text-sm leading-relaxed text-[var(--text-muted)]">
           Reads every Amazon review in a category, sorts the top complaints,
@@ -209,7 +209,7 @@ const outboundParagraphs = [
         </p>
         <div class="flex flex-wrap gap-1.5 pt-0.5">
           {["Amazon FBA", "Review mining"].map((tag) => (
-            <span class="font-mono-ui border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--text-muted)]">
+            <span class="font-mono-ui rounded-full border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1 text-[10px] text-[var(--text-muted)]">
               {tag}
             </span>
           ))}

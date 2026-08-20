@@ -12,16 +12,16 @@ const pipelineStages = [
 
 const blocks = [
   {
-    label: "Problem",
-    body: "I started with a simple question: can I trust the data I'm paying for? Apparently, not always. I had a large batch of contacts with emails marked as verified.",
+    label: "Problem:",
+    body: " I started with a simple question: can I trust the data I'm paying for? Apparently, not always. I had a large batch of contacts with emails marked as verified.",
   },
   {
-    label: "Action",
-    body: "Before sending anything, I checked those emails again using another verification process. So the pipeline now works from cheapest and simplest to more expensive steps — remove obvious bad fits, qualify the unclear ones, find emails, verify them again, then send. Nothing gets sent just because a vendor says it's good.",
+    label: "Action:",
+    body: " Before sending anything, I checked those emails again using another verification process. So the pipeline now works from cheapest and simplest to more expensive steps, removing obvious bad fits, qualifying the unclear ones, finding emails, verifying them again, then sending. Nothing gets sent just because a vendor says it's good.",
   },
   {
-    label: "Result",
-    body: "The results were surprising. Only 59.4% of the emails marked \"verified\" by the original provider passed the independent check. That could have become a deliverability problem if I had just trusted the label.",
+    label: "Result:",
+    body: " The results were surprising. Only 59.4% of the emails marked \"verified\" by the original provider passed the independent check. That could have become a deliverability problem if I had just trusted the label.",
   },
 ];
 
@@ -32,18 +32,17 @@ const stats = [
 ];
 ---
 
-<section id="case" class="scroll-mt-16 border-b border-[var(--border)] bg-[var(--surface-alt)] py-20 md:py-28">
+<section id="case" class="scroll-mt-16 border-b border-[var(--border)] bg-[var(--surface-alt)] py-24 md:py-32">
   <div class="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-16">
     <div class="flex flex-col gap-6 md:sticky md:top-24">
-      <p class="font-mono-ui text-xs tracking-[0.14em] text-[var(--accent)] uppercase">02</p>
-      <h2 class="font-display max-w-[18ch] text-3xl leading-[1.1] font-medium tracking-tight text-[var(--text)] md:text-[44px]">
+      <h2 class="font-display max-w-[18ch] text-3xl leading-[1.1] font-semibold tracking-tight text-[var(--text)] md:text-[42px]">
         Building an outbound pipeline
       </h2>
-      <div class="flex flex-col gap-2 border border-[var(--border)] bg-[var(--bg)] p-6">
+      <div class="flex flex-col gap-2 rounded-2xl bg-[var(--surface)] p-6">
         {
           pipelineStages.map((stage, i) => (
             <div class="flex items-center gap-2">
-              <span class="font-mono-ui w-full rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-center text-xs text-[var(--text)]">
+              <span class="font-mono-ui w-full rounded-full bg-[var(--bg)] px-4 py-2 text-center text-xs text-[var(--text)]">
                 {stage}
               </span>
               {i < pipelineStages.length - 1 && (
@@ -55,21 +54,21 @@ const stats = [
       </div>
     </div>
 
-    <div class="flex flex-col gap-9">
+    <div class="flex flex-col gap-6">
       {
         blocks.map((block) => (
-          <div class="flex flex-col gap-2.5 border-t border-[var(--border)] pt-5">
-            <p class="font-mono-ui text-[11px] tracking-[0.12em] text-[var(--text-muted)] uppercase">{block.label}</p>
-            <p class="text-lg leading-[1.65] text-[var(--text-muted)] text-pretty">{block.body}</p>
-          </div>
+          <p class="text-lg leading-[1.65] text-[var(--text-muted)] text-pretty">
+            <strong class="font-semibold text-[var(--text)]">{block.label}</strong>
+            {block.body}
+          </p>
         ))
       }
 
-      <div class="grid grid-cols-3 gap-px border border-[var(--border)] bg-[var(--border)]">
+      <div class="grid grid-cols-3 gap-4 pt-2">
         {
           stats.map((stat) => (
-            <div class="flex flex-col gap-1.5 bg-[var(--surface-alt)] p-6">
-              <span class="font-display text-3xl text-[var(--text)]">{stat.value}</span>
+            <div class="flex flex-col gap-1.5 rounded-2xl bg-[var(--surface)] p-6">
+              <span class="font-display text-3xl font-semibold text-[var(--text)]">{stat.value}</span>
               <span class="font-mono-ui text-[10px] tracking-[0.1em] text-[var(--text-muted)] uppercase">{stat.label}</span>
             </div>
           ))

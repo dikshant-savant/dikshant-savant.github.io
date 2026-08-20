@@ -3,20 +3,25 @@
 :root {
   --bg: #fbfbfa;
   --surface: #ffffff;
-  --surface-alt: #f2f2f0;
-  --text: #0e1116;
-  --text-muted: #4c5058;
-  --border: #e3e3e0;
+  --surface-alt: #f5f5f3;
+  --text: #171717;
+  --text-muted: #57595e;
+  --border: #e8e8e5;
   --accent: oklch(0.55 0.13 250);
   --accent-hover: oklch(0.62 0.13 250);
   --accent-soft: oklch(0.94 0.03 250);
   --accent-contrast: #ffffff;
 
-  --ink: #0e1116;
+  --ink: #111113;
   --ink-text: #f4f4f2;
   --ink-text-muted: #a6adb8;
   --ink-border: rgba(255, 255, 255, 0.12);
   --ink-accent: oklch(0.72 0.13 250);
+
+  --radius-pill: 999px;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
 }
 
 * {
@@ -37,7 +42,7 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 ::selection {
@@ -46,9 +51,9 @@ body {
 }
 
 .font-mono-ui {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 
 .font-display {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
