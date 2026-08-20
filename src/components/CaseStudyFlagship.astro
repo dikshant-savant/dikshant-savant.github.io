@@ -8,66 +8,68 @@ const modules = [
 
 const blocks = [
   {
-    label: "The problem",
-    body: "Small service businesses — CDL truck driving schools were the first market — lose enrollment inquiries every day. Nobody answers the phone during a class, and nobody follows up fast enough after a missed call. Off-the-shelf CRMs require configuration the owner will never do. The market needed a product, not a consulting engagement.",
+    label: "Problem",
+    body: "The original problem was pretty simple. A business misses a phone call. The person calling might be ready to buy. Nobody calls them back quickly enough. The lead is gone. I started building a solution for CDL driving schools, where staff can be busy teaching when calls come in.",
   },
   {
-    label: "What I built",
-    body: "Designed and shipped a locked, four-module product on GoHighLevel — built to be cloned identically across every client with zero per-client customization, because a one-person company can't scale on custom work. Hit and solved a real platform ceiling along the way: GoHighLevel allows exactly one incoming connection per automation node, so two branches can never merge. Designed a documented workaround (parallel duplication plus cross-workflow hand-offs) and a formal naming/architecture convention so the system stays auditable as it grows. Caught myself over-engineering midway — a 15-stage pipeline and staff-escalation logic the v1 product never needed — and cut it back to the actual promise: missed call in, one text out. Also built the growth engine feeding the product and the legal entity behind it: formed a Wyoming LLC, filed for an EIN, and passed A2P/10DLC SMS compliance with Twilio after debugging a real rejected submission.",
+    label: "Action",
+    body: "The first version got too complicated. I had built a huge workflow with all kinds of branches and escalation logic. Then I cut most of it. The product didn't need all that. The core promise was simple: if you miss a call, the person gets a response. So that's what I focused on. Getting it ready for customers also meant dealing with things that weren't really \"product work\": setting up the company, getting an EIN, working through Twilio's A2P registration, and figuring out platform limitations as they came up.",
   },
   {
-    label: "The result",
-    body: "Compliance-cleared and onboarding-ready, with the first clients live on the locked four-module system — early proof the clone-without-customization model holds up against real customers, not just in theory.",
+    label: "Result",
+    body: "The first clients are now using the same core system.",
   },
 ];
 
 const stats = [
-  { value: "4", label: "Clients onboarded on the locked 4-module product" },
-  { value: "$1,200/mo", label: "MRR from first clients" },
-  { value: "1", label: "LLC formed, EIN filed, A2P compliance passed — solo" },
+  { value: "4", label: "Clients onboarded" },
+  { value: "$1,200/mo", label: "MRR" },
 ];
 ---
 
 <section id="case-flagship" class="scroll-mt-16 border-b border-[var(--border)] py-20 md:py-28">
-  <div class="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-16">
-    <div class="flex flex-col gap-6 md:sticky md:top-24">
-      <p class="font-mono-ui text-xs tracking-[0.14em] text-[var(--accent)] uppercase">Case study 01 &middot; Flagship</p>
-      <h2 class="font-display max-w-[18ch] text-3xl leading-[1.1] font-medium tracking-tight text-[var(--text)] md:text-[44px]">
-        Building NeverMissABooking&trade;: a productized automation system, from zero to shippable
-      </h2>
-      <div class="flex flex-col gap-2 border border-[var(--border)] bg-[var(--surface-alt)] p-6">
-        {
-          modules.map((mod, i) => (
-            <div class="flex items-center gap-3">
-              <span class="font-mono-ui shrink-0 text-[11px] text-[var(--text-muted)]">0{i + 1}</span>
-              <span class="font-mono-ui w-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-center text-xs text-[var(--text)]">
-                {mod}
-              </span>
-            </div>
-          ))
-        }
+  <div class="mx-auto max-w-6xl px-6">
+    <p class="font-mono-ui mb-14 text-xs tracking-[0.14em] text-[var(--text-muted)] uppercase">Two things I spent a lot of time building</p>
+    <div class="grid gap-14 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-16">
+      <div class="flex flex-col gap-6 md:sticky md:top-24">
+        <p class="font-mono-ui text-xs tracking-[0.14em] text-[var(--accent)] uppercase">01</p>
+        <h2 class="font-display max-w-[20ch] text-3xl leading-[1.1] font-medium tracking-tight text-[var(--text)] md:text-[44px]">
+          NeverMissABooking&trade;: from an idea to something customers could use
+        </h2>
+        <div class="flex flex-col gap-2 border border-[var(--border)] bg-[var(--surface-alt)] p-6">
+          {
+            modules.map((mod, i) => (
+              <div class="flex items-center gap-3">
+                <span class="font-mono-ui shrink-0 text-[11px] text-[var(--text-muted)]">0{i + 1}</span>
+                <span class="font-mono-ui w-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-center text-xs text-[var(--text)]">
+                  {mod}
+                </span>
+              </div>
+            ))
+          }
+        </div>
       </div>
-    </div>
 
-    <div class="flex flex-col gap-9">
-      {
-        blocks.map((block) => (
-          <div class="flex flex-col gap-2.5 border-t border-[var(--border)] pt-5">
-            <p class="font-mono-ui text-[11px] tracking-[0.12em] text-[var(--text-muted)] uppercase">{block.label}</p>
-            <p class="text-lg leading-[1.65] text-[var(--text-muted)] text-pretty">{block.body}</p>
-          </div>
-        ))
-      }
-
-      <div class="grid grid-cols-3 gap-px border border-[var(--border)] bg-[var(--border)]">
+      <div class="flex flex-col gap-9">
         {
-          stats.map((stat) => (
-            <div class="flex flex-col gap-1.5 bg-[var(--surface)] p-6">
-              <span class="font-display text-3xl text-[var(--text)]">{stat.value}</span>
-              <span class="font-mono-ui text-[10px] tracking-[0.1em] text-[var(--text-muted)] uppercase">{stat.label}</span>
+          blocks.map((block) => (
+            <div class="flex flex-col gap-2.5 border-t border-[var(--border)] pt-5">
+              <p class="font-mono-ui text-[11px] tracking-[0.12em] text-[var(--text-muted)] uppercase">{block.label}</p>
+              <p class="text-lg leading-[1.65] text-[var(--text-muted)] text-pretty">{block.body}</p>
             </div>
           ))
         }
+
+        <div class="grid grid-cols-2 gap-px border border-[var(--border)] bg-[var(--border)]">
+          {
+            stats.map((stat) => (
+              <div class="flex flex-col gap-1.5 bg-[var(--surface)] p-6">
+                <span class="font-display text-3xl text-[var(--text)]">{stat.value}</span>
+                <span class="font-mono-ui text-[10px] tracking-[0.1em] text-[var(--text-muted)] uppercase">{stat.label}</span>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>

@@ -2,43 +2,42 @@
 import { Icon } from "astro-icon/components";
 
 const pipelineStages = [
-  "Maps scrape",
-  "Rule filter",
-  "LLM qualify",
-  "Email enrich",
-  "Verify",
+  "Get the data",
+  "Remove bad fits",
+  "Qualify unclear ones",
+  "Find emails",
+  "Verify again",
   "Send",
 ];
 
 const blocks = [
   {
-    label: "The problem",
-    body: "A scraped list isn't a sendable list. Raw Maps data comes with missing emails, duplicate businesses, and a vendor-supplied \"verified\" flag I had no reason to trust yet. Sending blind risks burning sender reputation on bounces before I know if the list is any good.",
+    label: "Problem",
+    body: "I started with a simple question: can I trust the data I'm paying for? Apparently, not always. I had a large batch of contacts with emails marked as verified.",
   },
   {
-    label: "What I built",
-    body: "A 9-stage pipeline (Maps scrape → rule filter → LLM qualify → email enrich → verify → send) that never spends money before free filtering has run. Rule-based filtering strips obvious non-fits first, for zero cost. An LLM qualification pass (Claude, batched) runs only on the genuinely ambiguous middle. Only qualified survivors get paid email enrichment. Every resulting email gets independently re-verified rather than trusting the enrichment vendor's own status flag.",
+    label: "Action",
+    body: "Before sending anything, I checked those emails again using another verification process. So the pipeline now works from cheapest and simplest to more expensive steps — remove obvious bad fits, qualify the unclear ones, find emails, verify them again, then send. Nothing gets sent just because a vendor says it's good.",
   },
   {
-    label: "The result",
-    body: "Checked the vendor's \"verified\" claim instead of trusting it — found it was correct only 59.4% of the time against independent verification on an 11,298-contact batch. That's the actual finding: not the size of the list, but catching a vendor's inflated accuracy claim before it cost sender reputation in bounces.",
+    label: "Result",
+    body: "The results were surprising. Only 59.4% of the emails marked \"verified\" by the original provider passed the independent check. That could have become a deliverability problem if I had just trusted the label.",
   },
 ];
 
 const stats = [
-  { value: "59.4%", label: "How often the vendor's own \"verified\" label was actually right" },
-  { value: "11,298", label: "Contacts independently verified" },
-  { value: "<2%", label: "Bounce ceiling enforced across 60 live mailboxes" },
-  { value: "16%", label: "Reply rate on the corrected list" },
+  { value: "59.4%", label: "Vendor verification accuracy on one batch" },
+  { value: "11,298", label: "Contacts independently checked" },
+  { value: "60", label: "Sending inboxes" },
 ];
 ---
 
 <section id="case" class="scroll-mt-16 border-b border-[var(--border)] bg-[var(--surface-alt)] py-20 md:py-28">
   <div class="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-16">
     <div class="flex flex-col gap-6 md:sticky md:top-24">
-      <p class="font-mono-ui text-xs tracking-[0.14em] text-[var(--accent)] uppercase">Case study 02</p>
+      <p class="font-mono-ui text-xs tracking-[0.14em] text-[var(--accent)] uppercase">02</p>
       <h2 class="font-display max-w-[18ch] text-3xl leading-[1.1] font-medium tracking-tight text-[var(--text)] md:text-[44px]">
-        Building an outbound pipeline that doesn't trust vendor labels
+        Building an outbound pipeline
       </h2>
       <div class="flex flex-col gap-2 border border-[var(--border)] bg-[var(--bg)] p-6">
         {
@@ -66,7 +65,7 @@ const stats = [
         ))
       }
 
-      <div class="grid grid-cols-2 gap-px border border-[var(--border)] bg-[var(--border)] md:grid-cols-4">
+      <div class="grid grid-cols-3 gap-px border border-[var(--border)] bg-[var(--border)]">
         {
           stats.map((stat) => (
             <div class="flex flex-col gap-1.5 bg-[var(--surface-alt)] p-6">

@@ -5,18 +5,17 @@ import ouShot from "../assets/projects/ourinneruniverse.png";
 import tinkleShot from "../assets/projects/tinkletreeco.png";
 import sureskuShot from "../assets/projects/suresku.png";
 
-const parRow = (letter: string, text: string) => ({ letter, text });
-
-const nmab = [
-  parRow("P", "Small service businesses lose enrollment inquiries to missed calls and slow follow-up, and can't configure a CRM themselves."),
-  parRow("A", "Designed and shipped a locked 4-module automation product on GoHighLevel, clonable across clients with zero customization; built the growth engine and legal/compliance layer behind it, solo."),
-  parRow("R", "4 clients onboarded, $1,200/mo MRR, and the product is compliance-cleared and onboarding-ready."),
+const nmabParagraphs = [
+  "I originally built this for CDL schools. If someone calls while everyone's busy, the system responds automatically and keeps the conversation moving instead of letting that lead disappear into voicemail.",
+  "It handles missed calls, follow-ups, booking, reminders, and review requests.",
+  "I built the product, set up the automations, dealt with the Twilio compliance process, formed the company behind it, and got the first customers using it.",
 ];
 
-const outbound = [
-  parRow("P", "A scraped contact list isn't a sendable list — missing emails, duplicates, and no way to know if a vendor's \"verified\" label could be trusted."),
-  parRow("A", "Built a 9-stage pipeline (scrape → filter → LLM-qualify → enrich → verify → send) that never pays for a step before free filtering has run, and independently re-verifies every vendor claim rather than trusting it."),
-  parRow("R", "Found the vendor's own \"verified\" flag was correct only 59.4% of the time on an 11,298-contact batch — caught before it became a deliverability problem."),
+const outboundParagraphs = [
+  "The raw data was messy. Businesses were duplicated, emails were missing, and the provider's \"verified\" emails weren't as verified as I expected.",
+  "So I built a pipeline that filters the list first, uses AI where the decision is less obvious, finds emails, and then checks those emails independently before they go anywhere near a sending campaign.",
+  "One useful thing I found: on one batch of 11,298 contacts, the vendor's own \"verified\" label was only right 59.4% of the time.",
+  "That was the whole point of building the extra verification step.",
 ];
 ---
 
@@ -36,22 +35,25 @@ const outbound = [
         class="group flex scroll-mt-24 flex-col gap-5 border border-[var(--border)] bg-[var(--ink)] p-8 text-[var(--ink-text)] transition-colors hover:border-[var(--ink-accent)] md:p-10"
       >
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <p class="font-mono-ui text-[11px] tracking-[0.14em] text-[var(--ink-accent)] uppercase">Flagship &middot; Productized SaaS</p>
+          <h3 class="font-display text-3xl font-medium md:text-4xl">NeverMissABooking&trade;</h3>
           <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--ink-text-muted)] uppercase">Read the case study &rarr;</span>
         </div>
-        <h3 class="font-display text-3xl font-medium md:text-4xl">NeverMissABooking&trade; <span class="text-[var(--ink-text-muted)] text-xl font-normal">(Capablanca AI)</span></h3>
+        <p class="font-display text-xl leading-snug text-[var(--ink-text)] md:text-2xl">
+          A system for businesses that miss calls and lose customers because of it.
+        </p>
         <div class="flex flex-col gap-2.5">
           {
-            nmab.map((row) => (
-              <p class="text-base leading-relaxed text-[var(--ink-text-muted)]">
-                <span class="font-mono-ui mr-2 text-[var(--ink-accent)]">{row.letter}:</span>
-                {row.text}
-              </p>
+            nmabParagraphs.map((text) => (
+              <p class="text-base leading-relaxed text-[var(--ink-text-muted)]">{text}</p>
             ))
           }
         </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-1 pt-1">
+          <span class="font-medium text-[var(--ink-text)]">4 clients</span>
+          <span class="font-medium text-[var(--ink-text)]">$1,200/month in recurring revenue</span>
+        </div>
         <div class="flex flex-wrap gap-2 pt-1">
-          {["GoHighLevel", "Claude API", "Twilio A2P", "Python"].map((tag) => (
+          {["GoHighLevel", "Claude", "Twilio", "Python"].map((tag) => (
             <span class="font-mono-ui border border-[var(--ink-border)] px-2.5 py-1 text-[11px] text-[var(--ink-text-muted)]">
               {tag}
             </span>
@@ -65,22 +67,26 @@ const outbound = [
         class="group flex scroll-mt-24 flex-col gap-5 border border-[var(--border)] bg-[var(--surface)] p-8 transition-colors hover:border-[var(--accent)] md:p-10"
       >
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <p class="font-mono-ui text-[11px] tracking-[0.14em] text-[var(--accent)] uppercase">Data &amp; growth engineering</p>
+          <h3 class="font-display text-3xl font-medium text-[var(--text)] md:text-4xl">Outbound Lead Pipeline</h3>
           <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase">Read the case study &rarr;</span>
         </div>
-        <h3 class="font-display text-3xl font-medium text-[var(--text)] md:text-4xl">Outbound Lead Pipeline</h3>
+        <p class="font-display text-xl leading-snug text-[var(--text)] md:text-2xl">
+          I had a big list of businesses. The problem was figuring out which contacts were actually safe to email.
+        </p>
         <div class="flex flex-col gap-2.5">
           {
-            outbound.map((row) => (
-              <p class="text-base leading-relaxed text-[var(--text-muted)]">
-                <span class="font-mono-ui mr-2 text-[var(--accent)]">{row.letter}:</span>
-                {row.text}
-              </p>
+            outboundParagraphs.map((text) => (
+              <p class="text-base leading-relaxed text-[var(--text-muted)]">{text}</p>
             ))
           }
         </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-1 pt-1">
+          <span class="font-medium text-[var(--text)]">11,298 contacts checked</span>
+          <span class="font-medium text-[var(--text)]">60 sending inboxes</span>
+          <span class="font-medium text-[var(--text)]">16% reply rate on the corrected list</span>
+        </div>
         <div class="flex flex-wrap gap-2 pt-1">
-          {["Python", "Outscraper", "MillionVerifier", "Claude API"].map((tag) => (
+          {["Python", "Outscraper", "MillionVerifier", "Claude"].map((tag) => (
             <span class="font-mono-ui border border-[var(--border)] px-2.5 py-1 text-[11px] text-[var(--text-muted)]">
               {tag}
             </span>
@@ -100,13 +106,13 @@ const outbound = [
             <Image src={slickShot} alt="SlickOnboard marketing homepage" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
           <div class="flex flex-col gap-2.5 p-6">
-            <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">Onboarding automation</p>
             <h4 class="font-display text-xl font-medium text-[var(--text)]">SlickOnboard</h4>
+            <p class="font-medium text-sm text-[var(--text)]">I got tired of doing the same client onboarding steps over and over.</p>
             <p class="text-sm leading-relaxed text-[var(--text-muted)]">
-              Agencies were losing days to back-and-forth just to collect a
-              new client's contract, files, and payment. Built a flow that
-              runs itself once a client signs — 40+ onboardings completed
-              with zero manual follow-up.
+              So I built a system for it. Once a client signs up, the
+              onboarding flow collects what it needs and sets up the
+              workspace without someone having to chase the client through
+              email. It's been used for 40+ onboardings so far.
             </p>
             <div class="flex flex-wrap gap-1.5 pt-0.5">
               {["n8n", "OpenAI", "Supabase"].map((tag) => (
@@ -129,16 +135,18 @@ const outbound = [
             <Image src={ouShot} alt="Our Inner Universe homepage" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
           <div class="flex flex-col gap-2.5 p-6">
-            <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">Programmatic SEO</p>
             <h4 class="font-display text-xl font-medium text-[var(--text)]">Our Inner Universe</h4>
+            <p class="font-medium text-sm text-[var(--text)]">I wanted to see if I could build thousands of useful pages without writing thousands of pages.</p>
             <p class="text-sm leading-relaxed text-[var(--text-muted)]">
-              Publishing thousands of accurate, unique self-discovery pages
-              by hand isn't possible solo. Built a system generating and
-              managing 7,000+ pages from a single data model — now pulling
-              24,000+ monthly organic sessions.
+              The answer was yes, but it took more work than just asking AI
+              to generate content. I built the data structure and
+              page-generation system behind the site, then worked through
+              the problem of making thousands of pages actually useful and
+              distinct. The site now has 7,000+ pages and brings in organic
+              traffic.
             </p>
             <div class="flex flex-wrap gap-1.5 pt-0.5">
-              {["Astro", "Claude", "pSEO"].map((tag) => (
+              {["Astro", "Claude", "Programmatic SEO"].map((tag) => (
                 <span class="font-mono-ui border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--text-muted)]">
                   {tag}
                 </span>
@@ -158,16 +166,17 @@ const outbound = [
             <Image src={tinkleShot} alt="TinkleTree Co product listing on Amazon" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
           <div class="flex flex-col gap-2.5 p-6">
-            <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">E-commerce &middot; Amazon US launch</p>
             <h4 class="font-display text-xl font-medium text-[var(--text)]">TinkleTree Co</h4>
+            <p class="font-medium text-sm text-[var(--text)]">I built and launched my own product brand.</p>
             <p class="text-sm leading-relaxed text-[var(--text-muted)]">
-              Needed a real storefront and hands-off post-purchase emails,
-              not another templated theme. Built the storefront and
-              automated the product and email workflow — automated flows now
-              account for roughly 24% of monthly revenue.
+              That meant doing a bit of everything: the product, supplier
+              conversations, packaging, listings, the storefront, Amazon,
+              email flows, and trying to get people to actually buy it. The
+              automated email flows now contribute roughly 24% of monthly
+              revenue.
             </p>
             <div class="flex flex-wrap gap-1.5 pt-0.5">
-              {["Shopify", "Klaviyo"].map((tag) => (
+              {["Shopify", "Klaviyo", "Amazon"].map((tag) => (
                 <span class="font-mono-ui border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--text-muted)]">
                   {tag}
                 </span>

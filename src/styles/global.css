@@ -37,7 +37,7 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 ::selection {
@@ -46,9 +46,9 @@ body {
 }
 
 .font-mono-ui {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .font-display {
-  font-family: "Playfair Display Variable", Georgia, serif;
+  font-family: "Times New Roman", Times, serif;
 }

@@ -1,60 +1,10 @@
 ---
 const groups = [
-  {
-    name: "Product & growth",
-    tools: "ICP definition & scoring · positioning & pricing · launch sequencing · GTM strategy · cold outbound · deliverability · programmatic SEO · lifecycle email",
-    proof: [
-      { label: "NeverMissABooking", href: "#p-nmab" },
-      { label: "Outbound pipeline", href: "#p-outbound" },
-      { label: "Our Inner Universe", href: "#p-inner-universe" },
-      { label: "TinkleTree Co", href: "#p-tinkletree" },
-    ],
-  },
-  {
-    name: "AI and LLMs",
-    tools: "OpenAI · Claude · structured outputs · prompt workflows · evaluation · production chatbot guardrails",
-    proof: [
-      { label: "SlickOnboard", href: "#p-slickonboard" },
-      { label: "Our Inner Universe", href: "#p-inner-universe" },
-      { label: "Outbound pipeline", href: "#p-outbound" },
-      { label: "NeverMissABooking", href: "#p-nmab" },
-    ],
-  },
-  {
-    name: "Data engineering",
-    tools: "Python · SQL · enrichment & dedupe · verification · schema design",
-    proof: [
-      { label: "Outbound pipeline", href: "#p-outbound" },
-      { label: "Our Inner Universe", href: "#p-inner-universe" },
-      { label: "sureSKU", href: "#p-suresku" },
-      { label: "NeverMissABooking", href: "#p-nmab" },
-    ],
-  },
-  {
-    name: "Cloud & infra",
-    tools: "Supabase · Vercel · Cloudflare Pages/D1/Workers · cron & queues · mailbox infrastructure · DNS",
-    proof: [
-      { label: "SlickOnboard", href: "#p-slickonboard" },
-      { label: "Our Inner Universe", href: "#p-inner-universe" },
-      { label: "NeverMissABooking", href: "#p-nmab" },
-    ],
-  },
-  {
-    name: "Automation / no-code",
-    tools: "GoHighLevel · n8n · Make · Zapier · webhook orchestration · Airtable",
-    proof: [
-      { label: "NeverMissABooking", href: "#p-nmab" },
-      { label: "SlickOnboard", href: "#p-slickonboard" },
-      { label: "TinkleTree Co", href: "#p-tinkletree" },
-    ],
-  },
-  {
-    name: "Operations / compliance",
-    tools: "Entity formation (Wyoming LLC) · EIN filing · A2P/10DLC telecom compliance · vendor coordination",
-    proof: [
-      { label: "NeverMissABooking", href: "#p-nmab" },
-    ],
-  },
+  { name: "AI", tools: "OpenAI · Claude · structured outputs · prompt workflows" },
+  { name: "Data", tools: "Python · SQL · scraping · enrichment · verification · data cleaning" },
+  { name: "Automation", tools: "GoHighLevel · n8n · Make · Zapier · APIs · webhooks" },
+  { name: "Web & infrastructure", tools: "Supabase · Vercel · Cloudflare · DNS · cron jobs · databases" },
+  { name: "Growth", tools: "Cold email · deliverability · SEO · lifecycle email · landing pages · positioning" },
 ];
 ---
 
@@ -62,27 +12,17 @@ const groups = [
   <div class="mx-auto max-w-6xl px-6">
     <div class="flex items-baseline justify-between border-b border-[var(--border)] pb-4">
       <h2 class="font-display text-3xl font-medium tracking-tight text-[var(--text)] md:text-[44px]">
-        What I use
+        Things I know how to work with
       </h2>
-      <span class="font-mono-ui hidden text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase sm:inline">Most of these skills are linked to something I've actually built with them</span>
+      <span class="font-mono-ui hidden text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase sm:inline">I'm less interested in collecting skills than using whatever is needed to finish the project</span>
     </div>
 
     <div class="mt-4 flex flex-col">
       {
         groups.map((group) => (
-          <div class="grid gap-3 border-b border-[var(--border)] py-6 md:grid-cols-[190px_1fr_1.1fr] md:items-baseline md:gap-8">
+          <div class="grid gap-3 border-b border-[var(--border)] py-6 md:grid-cols-[220px_1fr] md:items-baseline md:gap-8">
             <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">{group.name}</p>
             <p class="text-base leading-[1.7] text-[var(--text-muted)]">{group.tools}</p>
-            <div class="flex flex-wrap gap-x-3.5 gap-y-1.5 text-sm">
-              {group.proof.map((p) => (
-                <a
-                  href={p.href}
-                  class="border-b border-[var(--border)] text-[var(--text)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                >
-                  {p.label}
-                </a>
-              ))}
-            </div>
           </div>
         ))
       }
