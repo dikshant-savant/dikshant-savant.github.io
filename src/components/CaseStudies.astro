@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
-
 const pipelineStages = [
   "Get the data",
   "Remove bad fits",
@@ -12,16 +10,16 @@ const pipelineStages = [
 
 const blocks = [
   {
-    label: "Problem:",
-    body: " I started with a simple question: can I trust the data I'm paying for? Apparently, not always. I had a large batch of contacts with emails marked as verified.",
+    label: "The problem",
+    body: "I started with a simple question: can I trust the data I'm paying for? Apparently, not always. I had a large batch of contacts with emails marked as verified.",
   },
   {
-    label: "Action:",
-    body: " Before sending anything, I checked those emails again using another verification process. So the pipeline now works from cheapest and simplest to more expensive steps, removing obvious bad fits, qualifying the unclear ones, finding emails, verifying them again, then sending. Nothing gets sent just because a vendor says it's good.",
+    label: "What I built",
+    body: "Before sending anything, I checked those emails again using another verification process. So the pipeline now works from cheapest and simplest to more expensive steps, removing obvious bad fits, qualifying the unclear ones, finding emails, verifying them again, then sending. Nothing gets sent just because a vendor says it's good.",
   },
   {
-    label: "Result:",
-    body: " The results were surprising. Only 59.4% of the emails marked \"verified\" by the original provider passed the independent check. That could have become a deliverability problem if I had just trusted the label.",
+    label: "The result",
+    body: "The results were surprising. Only 59.4% of the emails marked \"verified\" by the original provider passed the independent check. That could have become a deliverability problem if I had just trusted the label.",
   },
 ];
 
@@ -32,48 +30,53 @@ const stats = [
 ];
 ---
 
-<section id="case" class="scroll-mt-16 border-b border-[var(--border)] bg-[var(--surface-alt)] py-24 md:py-32">
-  <div class="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-16">
-    <div class="flex flex-col gap-6 md:sticky md:top-24">
-      <h2 class="font-display max-w-[18ch] text-3xl leading-[1.1] font-semibold tracking-tight text-[var(--text)] md:text-[42px]">
-        Building an outbound pipeline
+<section id="case" class="font-serif scroll-mt-16 border-b border-[var(--border-strong)] bg-[var(--surface-alt)] py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="flex flex-col gap-7 border-b border-[var(--border)] pb-14">
+      <p class="text-sm tracking-[0.22em] text-[var(--v2-accent)] uppercase">Case study 02</p>
+      <h2 class="max-w-[24ch] text-4xl leading-[1.06] tracking-tight text-[var(--text)] md:text-6xl">
+        Building an outbound pipeline that <span class="text-[var(--v2-accent)]">doesn't trust vendor labels</span>
       </h2>
-      <div class="flex flex-col gap-2 rounded-2xl bg-[var(--surface)] p-6">
-        {
-          pipelineStages.map((stage, i) => (
-            <div class="flex items-center gap-2">
-              <span class="font-mono-ui w-full rounded-full bg-[var(--bg)] px-4 py-2 text-center text-xs text-[var(--text)]">
-                {stage}
-              </span>
-              {i < pipelineStages.length - 1 && (
-                <Icon name="ph:arrow-down" class="h-3.5 w-3.5 shrink-0 text-[var(--text-muted)]" />
-              )}
-            </div>
-          ))
-        }
-      </div>
     </div>
 
-    <div class="flex flex-col gap-6">
+    <div class="grid gap-10 py-14 md:grid-cols-3">
       {
         blocks.map((block) => (
-          <p class="text-lg leading-[1.65] text-[var(--text-muted)] text-pretty">
-            <strong class="font-semibold text-[var(--text)]">{block.label}</strong>
-            {block.body}
-          </p>
+          <div class="flex flex-col gap-3.5">
+            <p class="text-sm tracking-[0.18em] text-[var(--text-faint)] uppercase">{block.label}</p>
+            <p class="text-lg leading-[1.68] text-[var(--text-body)] text-pretty">{block.body}</p>
+          </div>
         ))
       }
+    </div>
 
-      <div class="grid grid-cols-3 gap-4 pt-2">
-        {
-          stats.map((stat) => (
-            <div class="flex flex-col gap-1.5 rounded-2xl bg-[var(--surface)] p-6">
-              <span class="font-display text-3xl font-semibold text-[var(--text)]">{stat.value}</span>
-              <span class="font-mono-ui text-[10px] tracking-[0.1em] text-[var(--text-muted)] uppercase">{stat.label}</span>
+    <div class="flex flex-col gap-2 border border-[var(--border)] bg-[var(--bg)] p-6 md:flex-row md:items-center md:gap-0">
+      {
+        pipelineStages.map((stage, i) => (
+          <>
+            <div class="flex flex-1 items-center justify-center border-b border-[var(--border)] py-3 text-center text-base text-[var(--text)] md:border-r md:border-b-0 md:last:border-r-0">
+              {stage}
             </div>
-          ))
-        }
-      </div>
+          </>
+        ))
+      }
+    </div>
+
+    <div class="grid grid-cols-3 border-t border-[var(--border)]">
+      {
+        stats.map((stat, i) => (
+          <div
+            class:list={[
+              "flex flex-col gap-2 py-10 pr-4 md:pr-8",
+              i < 2 && "border-r border-[var(--border)]",
+              i > 0 && "pl-4 md:pl-8",
+            ]}
+          >
+            <span class="text-4xl leading-none whitespace-nowrap text-[var(--text)] md:text-5xl">{stat.value}</span>
+            <span class="text-[13px] tracking-[0.18em] text-[var(--text-muted)] uppercase">{stat.label}</span>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

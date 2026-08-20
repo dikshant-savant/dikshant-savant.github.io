@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #fbfbfa;
-  --surface: #ffffff;
-  --surface-alt: #f5f5f3;
-  --text: #171717;
-  --text-muted: #57595e;
-  --border: #e8e8e5;
+  /* Editorial "v2" palette, used everywhere except the hero */
+  --bg: #f2efe8;
+  --surface: #f2efe8;
+  --surface-alt: #e7e2d8;
+  --text: #14120f;
+  --text-body: #312d27;
+  --text-muted: #6e6659;
+  --text-faint: #8a8175;
+  --border: #d6d0c4;
+  --border-strong: #14120f;
+  --v2-accent: #a8201a;
+
+  /* Hero-only tokens (do not repurpose, do not change) */
   --accent: oklch(0.55 0.13 250);
   --accent-hover: oklch(0.62 0.13 250);
   --accent-soft: oklch(0.94 0.03 250);
@@ -17,11 +24,6 @@
   --ink-text-muted: #a6adb8;
   --ink-border: rgba(255, 255, 255, 0.12);
   --ink-accent: oklch(0.72 0.13 250);
-
-  --radius-pill: 999px;
-  --radius-lg: 16px;
-  --radius-md: 10px;
-  --radius-sm: 8px;
 }
 
 * {
@@ -42,18 +44,24 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--accent-contrast);
+  background: var(--v2-accent);
+  color: var(--bg);
 }
 
+/* Hero-only fonts, kept exactly as before the v2 reskin */
 .font-mono-ui {
   font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 
 .font-display {
   font-family: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Used by every section except the hero */
+.font-serif {
+  font-family: "Times New Roman", Times, serif;
 }

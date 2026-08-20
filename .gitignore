@@ -23,5 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# legacy standalone draft, superseded by the Astro site
+# legacy standalone drafts, superseded by the Astro site
 Portfolio Redesign (standalone).html
+Portfolio v2 (standalone).html

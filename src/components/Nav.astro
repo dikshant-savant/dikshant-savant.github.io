@@ -9,12 +9,12 @@ const links = [
 ---
 
 <header
-  class="sticky top-0 z-40 border-b border-[var(--ink-border)] bg-[var(--ink)]/92 backdrop-blur-md"
+  class="font-serif sticky top-0 z-40 border-b border-[var(--border-strong)] bg-[var(--bg)]/94 backdrop-blur-md"
 >
   <nav
-    class="font-display mx-auto flex h-16 max-w-6xl items-center justify-between px-6 text-sm text-[var(--ink-text-muted)]"
+    class="mx-auto flex h-[58px] max-w-6xl items-center justify-between gap-5 px-6 text-[var(--text-faint)]"
   >
-    <a href="#top" class="font-semibold text-[var(--ink-text)]">
+    <a href="#top" class="text-lg tracking-[0.14em] text-[var(--text)] uppercase">
       Dikshant Savant
     </a>
 
@@ -24,7 +24,7 @@ const links = [
           <li>
             <a
               href={link.href}
-              class="transition-colors hover:text-[var(--ink-text)]"
+              class="text-sm tracking-[0.16em] uppercase transition-colors hover:text-[var(--v2-accent)]"
             >
               {link.label}
             </a>
