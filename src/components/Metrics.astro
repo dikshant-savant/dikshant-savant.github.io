@@ -1,0 +1,32 @@
+---
+const stats = [
+  { value: "10,000+", label: "Records processed" },
+  { value: "11,298", label: "Contacts verified" },
+  { value: "60 / 20", label: "Mailboxes warmed" },
+  { value: "7,000+", label: "Pages generated" },
+];
+---
+
+<section class="border-b border-[var(--ink-border)] bg-[var(--ink)] text-[var(--ink-text)]">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 border-t border-[var(--ink-border)] md:grid-cols-4">
+    {
+      stats.map((stat, i) => (
+        <div
+          class:list={[
+            "flex flex-col gap-2 border-[var(--ink-border)] px-6 py-9 md:px-7 md:py-10",
+            i % 2 === 0 && "border-r",
+            i < 2 && "border-b md:border-b-0",
+            i === 1 && "md:border-r",
+          ]}
+        >
+          <span class="font-display text-4xl tracking-tight text-[var(--ink-text)] md:text-[52px]">
+            {stat.value}
+          </span>
+          <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--ink-text-muted)] uppercase">
+            {stat.label}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</section>

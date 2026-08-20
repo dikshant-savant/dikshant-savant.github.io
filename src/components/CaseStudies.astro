@@ -1,0 +1,80 @@
+---
+import { Icon } from "astro-icon/components";
+
+const pipelineStages = [
+  "Maps scrape",
+  "Rule filter",
+  "LLM qualify",
+  "Email enrich",
+  "Verify",
+  "Send",
+];
+
+const blocks = [
+  {
+    label: "The problem",
+    body: "I had a large list of contacts, but it wasn't clean enough to send to. Emails were missing, duplicates were everywhere, and there was no real system for deciding who to contact or how to send at scale.",
+  },
+  {
+    label: "What I built",
+    body: "I built a pipeline to clean the data, remove duplicates, find and verify emails, and qualify contacts. I also set up 60 sending inboxes, with another 20 ready when needed. AI helps generate personalized opening lines, which I can review in batches.",
+  },
+  {
+    label: "The result",
+    body: "The final list had 11,298 verified contacts and was ready to send at scale. Once everything was set up, keeping the system running took less than an hour a week.",
+  },
+];
+
+const stats = [
+  { value: "11,298", label: "Verified" },
+  { value: "60 / 20", label: "Mailboxes" },
+  { value: "<1 hr", label: "Upkeep / week" },
+];
+---
+
+<section id="case" class="scroll-mt-16 border-b border-[var(--border)] bg-[var(--surface-alt)] py-20 md:py-28">
+  <div class="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-16">
+    <div class="flex flex-col gap-6 md:sticky md:top-24">
+      <p class="font-mono-ui text-xs tracking-[0.14em] text-[var(--accent)] uppercase">Case study</p>
+      <h2 class="font-display max-w-[16ch] text-3xl leading-[1.1] font-medium tracking-tight text-[var(--text)] md:text-[44px]">
+        Building an outbound system for 11,298 contacts
+      </h2>
+      <div class="flex flex-col gap-2 border border-[var(--border)] bg-[var(--bg)] p-6">
+        {
+          pipelineStages.map((stage, i) => (
+            <div class="flex items-center gap-2">
+              <span class="font-mono-ui w-full rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-center text-xs text-[var(--text)]">
+                {stage}
+              </span>
+              {i < pipelineStages.length - 1 && (
+                <Icon name="ph:arrow-down" class="h-3.5 w-3.5 shrink-0 text-[var(--text-muted)]" />
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-9">
+      {
+        blocks.map((block) => (
+          <div class="flex flex-col gap-2.5 border-t border-[var(--border)] pt-5">
+            <p class="font-mono-ui text-[11px] tracking-[0.12em] text-[var(--text-muted)] uppercase">{block.label}</p>
+            <p class="text-lg leading-[1.65] text-[var(--text-muted)] text-pretty">{block.body}</p>
+          </div>
+        ))
+      }
+
+      <div class="grid grid-cols-3 gap-px border border-[var(--border)] bg-[var(--border)]">
+        {
+          stats.map((stat) => (
+            <div class="flex flex-col gap-1.5 bg-[var(--surface-alt)] p-6">
+              <span class="font-display text-3xl text-[var(--text)]">{stat.value}</span>
+              <span class="font-mono-ui text-[10px] tracking-[0.1em] text-[var(--text-muted)] uppercase">{stat.label}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

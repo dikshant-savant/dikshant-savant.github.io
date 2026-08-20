@@ -1,0 +1,42 @@
+---
+const channels = [
+  { label: "Email", value: "dikshantsavant@gmail.com", href: "mailto:dikshantsavant@gmail.com" },
+  { label: "LinkedIn", value: "/in/dikshant-savant", href: "https://www.linkedin.com/in/dikshant-savant/" },
+  { label: "GitHub", value: "@dikshant-savant", href: "https://github.com/dikshant-savant" },
+];
+---
+
+<section id="contact" class="scroll-mt-16 bg-[var(--ink)] text-[var(--ink-text)]">
+  <div class="mx-auto max-w-6xl px-6 py-24 md:py-28">
+    <h2 class="font-display max-w-[18ch] text-4xl leading-[1.05] font-medium tracking-tight md:text-6xl">
+      Hiring for automation work? <em class="text-[var(--ink-accent)] italic">Let's talk.</em>
+    </h2>
+
+    <div class="mt-11 grid grid-cols-1 border-t border-[var(--ink-border)] sm:grid-cols-3">
+      {
+        channels.map((c, i) => (
+          <a
+            href={c.href}
+            target={c.href.startsWith("http") ? "_blank" : undefined}
+            rel={c.href.startsWith("http") ? "noopener" : undefined}
+            class:list={[
+              "flex flex-col gap-2 border-[var(--ink-border)] py-8 transition-colors hover:text-[var(--ink-accent)]",
+              i === 0 && "sm:pr-6 sm:border-r",
+              i === 1 && "sm:px-6 sm:border-r",
+              i === 2 && "sm:pl-6",
+            ]}
+          >
+            <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--ink-text-muted)] uppercase">{c.label}</span>
+            <span class="text-xl">{c.value}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-[var(--border)] py-8">
+  <div class="mx-auto max-w-6xl px-6 text-center text-xs text-[var(--text-muted)]">
+    Dikshant Savant &middot; Washington, DC &middot; Working remotely
+  </div>
+</footer>

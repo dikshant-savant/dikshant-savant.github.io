@@ -1,0 +1,26 @@
+---
+const items = [
+  { name: "Vedic Astrology Chart Engine", body: "A browser-based Vedic astrology chart calculator using real planetary positions. No backend." },
+  { name: "OneTinyWin", body: "A simple email accountability tool. One daily check-in, then an AI-written reflection at the end of the week." },
+  { name: "NetworkingFollowUp.com", body: "A small tool for remembering who you met and when you should follow up." },
+  { name: "SoundAmerican", body: "Accent training for non-native English speakers preparing for jobs in the US." },
+];
+---
+
+<section class="border-b border-[var(--border)] py-12">
+  <div class="mx-auto max-w-6xl px-6">
+    <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase">
+      Also building
+    </p>
+    <div class="mt-5 grid gap-x-6 gap-y-5 border-t border-[var(--border)] pt-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        items.map((item) => (
+          <div>
+            <p class="text-sm font-medium text-[var(--text)]">{item.name}</p>
+            <p class="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">{item.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
