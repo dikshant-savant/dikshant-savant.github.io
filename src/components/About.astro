@@ -1,12 +1,15 @@
 ---
+import { Image } from "astro:assets";
+import headshot from "../assets/profile/headshot.png";
+
 const chips = ["Self-taught", "3 yrs in production", "Solo builder", "Remote"];
 ---
 
 <section id="about" class="scroll-mt-16 border-b border-[var(--border)] bg-[var(--surface-alt)] py-20 md:py-28">
   <div class="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[240px_1fr] md:gap-14">
     <div class="flex flex-col gap-3">
-      <div class="font-display flex aspect-[4/5] items-center justify-center border border-[var(--border)] bg-[var(--bg)] text-4xl text-[var(--text-muted)]">
-        DS
+      <div class="aspect-[4/5] overflow-hidden border border-[var(--border)] bg-[var(--bg)]">
+        <Image src={headshot} alt="Dikshant Savant" width={480} height={600} class="h-full w-full object-cover object-top" />
       </div>
       <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase">About</span>
     </div>
