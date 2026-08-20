@@ -13,31 +13,32 @@ const pipelineStages = [
 const blocks = [
   {
     label: "The problem",
-    body: "I had a large list of contacts, but it wasn't clean enough to send to. Emails were missing, duplicates were everywhere, and there was no real system for deciding who to contact or how to send at scale.",
+    body: "A scraped list isn't a sendable list. Raw Maps data comes with missing emails, duplicate businesses, and a vendor-supplied \"verified\" flag I had no reason to trust yet. Sending blind risks burning sender reputation on bounces before I know if the list is any good.",
   },
   {
     label: "What I built",
-    body: "I built a pipeline to clean the data, remove duplicates, find and verify emails, and qualify contacts. I also set up 60 sending inboxes, with another 20 ready when needed. AI helps generate personalized opening lines, which I can review in batches.",
+    body: "A 9-stage pipeline (Maps scrape → rule filter → LLM qualify → email enrich → verify → send) that never spends money before free filtering has run. Rule-based filtering strips obvious non-fits first, for zero cost. An LLM qualification pass (Claude, batched) runs only on the genuinely ambiguous middle. Only qualified survivors get paid email enrichment. Every resulting email gets independently re-verified rather than trusting the enrichment vendor's own status flag.",
   },
   {
     label: "The result",
-    body: "The final list had 11,298 verified contacts and was ready to send at scale. Once everything was set up, keeping the system running took less than an hour a week.",
+    body: "Checked the vendor's \"verified\" claim instead of trusting it — found it was correct only 59.4% of the time against independent verification on an 11,298-contact batch. That's the actual finding: not the size of the list, but catching a vendor's inflated accuracy claim before it cost sender reputation in bounces.",
   },
 ];
 
 const stats = [
-  { value: "11,298", label: "Verified" },
-  { value: "60 / 20", label: "Mailboxes" },
-  { value: "<1 hr", label: "Upkeep / week" },
+  { value: "59.4%", label: "How often the vendor's own \"verified\" label was actually right" },
+  { value: "11,298", label: "Contacts independently verified" },
+  { value: "<2%", label: "Bounce ceiling enforced across 60 live mailboxes" },
+  { value: "16%", label: "Reply rate on the corrected list" },
 ];
 ---
 
 <section id="case" class="scroll-mt-16 border-b border-[var(--border)] bg-[var(--surface-alt)] py-20 md:py-28">
   <div class="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[1fr_1.1fr] md:items-start md:gap-16">
     <div class="flex flex-col gap-6 md:sticky md:top-24">
-      <p class="font-mono-ui text-xs tracking-[0.14em] text-[var(--accent)] uppercase">Case study</p>
-      <h2 class="font-display max-w-[16ch] text-3xl leading-[1.1] font-medium tracking-tight text-[var(--text)] md:text-[44px]">
-        Building an outbound system for 11,298 contacts
+      <p class="font-mono-ui text-xs tracking-[0.14em] text-[var(--accent)] uppercase">Case study 02</p>
+      <h2 class="font-display max-w-[18ch] text-3xl leading-[1.1] font-medium tracking-tight text-[var(--text)] md:text-[44px]">
+        Building an outbound pipeline that doesn't trust vendor labels
       </h2>
       <div class="flex flex-col gap-2 border border-[var(--border)] bg-[var(--bg)] p-6">
         {
@@ -65,7 +66,7 @@ const stats = [
         ))
       }
 
-      <div class="grid grid-cols-3 gap-px border border-[var(--border)] bg-[var(--border)]">
+      <div class="grid grid-cols-2 gap-px border border-[var(--border)] bg-[var(--border)] md:grid-cols-4">
         {
           stats.map((stat) => (
             <div class="flex flex-col gap-1.5 bg-[var(--surface-alt)] p-6">

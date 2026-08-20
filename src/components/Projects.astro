@@ -4,6 +4,20 @@ import slickShot from "../assets/projects/slickonboard-app.png";
 import ouShot from "../assets/projects/ourinneruniverse.png";
 import tinkleShot from "../assets/projects/tinkletreeco.png";
 import sureskuShot from "../assets/projects/suresku.png";
+
+const parRow = (letter: string, text: string) => ({ letter, text });
+
+const nmab = [
+  parRow("P", "Small service businesses lose enrollment inquiries to missed calls and slow follow-up, and can't configure a CRM themselves."),
+  parRow("A", "Designed and shipped a locked 4-module automation product on GoHighLevel, clonable across clients with zero customization; built the growth engine and legal/compliance layer behind it, solo."),
+  parRow("R", "4 clients onboarded, $1,200/mo MRR, and the product is compliance-cleared and onboarding-ready."),
+];
+
+const outbound = [
+  parRow("P", "A scraped contact list isn't a sendable list — missing emails, duplicates, and no way to know if a vendor's \"verified\" label could be trusted."),
+  parRow("A", "Built a 9-stage pipeline (scrape → filter → LLM-qualify → enrich → verify → send) that never pays for a step before free filtering has run, and independently re-verifies every vendor claim rather than trusting it."),
+  parRow("R", "Found the vendor's own \"verified\" flag was correct only 59.4% of the time on an 11,298-contact batch — caught before it became a deliverability problem."),
+];
 ---
 
 <section id="work" class="scroll-mt-16 border-b border-[var(--border)] py-20 md:py-28">
@@ -12,53 +26,116 @@ import sureskuShot from "../assets/projects/suresku.png";
       <h2 class="font-display text-3xl font-medium tracking-tight text-[var(--text)] md:text-[44px]">
         Selected work
       </h2>
-      <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase">04 projects</span>
+      <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase">05 projects</span>
     </div>
 
-    <div class="mt-11 grid gap-6 md:grid-cols-[2fr_1fr] md:items-start">
+    <div class="mt-11 flex flex-col gap-6">
       <a
-        id="p-slickonboard"
-        href="https://slickonboard.com"
-        target="_blank"
-        rel="noopener"
-        class="group flex flex-col border border-[var(--border)] bg-[var(--surface)] scroll-mt-24"
+        id="p-nmab"
+        href="#case-flagship"
+        class="group flex scroll-mt-24 flex-col gap-5 border border-[var(--border)] bg-[var(--ink)] p-8 text-[var(--ink-text)] transition-colors hover:border-[var(--ink-accent)] md:p-10"
       >
-        <div class="aspect-[16/9] overflow-hidden border-b border-[var(--border)]">
-          <Image src={slickShot} alt="SlickOnboard marketing homepage" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <p class="font-mono-ui text-[11px] tracking-[0.14em] text-[var(--ink-accent)] uppercase">Flagship &middot; Productized SaaS</p>
+          <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--ink-text-muted)] uppercase">Read the case study &rarr;</span>
         </div>
-        <div class="flex flex-col gap-3.5 p-8">
-          <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">Onboarding automation</p>
-          <h3 class="font-display text-3xl font-medium text-[var(--text)]">SlickOnboard</h3>
-          <p class="max-w-[52ch] text-base leading-relaxed text-[var(--text-muted)]">
-            A client signs a contract, and the rest of the setup happens
-            automatically.
-          </p>
-          <div class="flex flex-wrap gap-2 pt-1.5">
-            {["n8n", "OpenAI", "Supabase"].map((tag) => (
-              <span class="font-mono-ui border border-[var(--border)] px-2.5 py-1 text-[11px] text-[var(--text-muted)]">
-                {tag}
-              </span>
-            ))}
-          </div>
+        <h3 class="font-display text-3xl font-medium md:text-4xl">NeverMissABooking&trade; <span class="text-[var(--ink-text-muted)] text-xl font-normal">(Capablanca AI)</span></h3>
+        <div class="flex flex-col gap-2.5">
+          {
+            nmab.map((row) => (
+              <p class="text-base leading-relaxed text-[var(--ink-text-muted)]">
+                <span class="font-mono-ui mr-2 text-[var(--ink-accent)]">{row.letter}:</span>
+                {row.text}
+              </p>
+            ))
+          }
+        </div>
+        <div class="flex flex-wrap gap-2 pt-1">
+          {["GoHighLevel", "Claude API", "Twilio A2P", "Python"].map((tag) => (
+            <span class="font-mono-ui border border-[var(--ink-border)] px-2.5 py-1 text-[11px] text-[var(--ink-text-muted)]">
+              {tag}
+            </span>
+          ))}
         </div>
       </a>
 
-      <div class="flex flex-col gap-6">
+      <a
+        id="p-outbound"
+        href="#case"
+        class="group flex scroll-mt-24 flex-col gap-5 border border-[var(--border)] bg-[var(--surface)] p-8 transition-colors hover:border-[var(--accent)] md:p-10"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <p class="font-mono-ui text-[11px] tracking-[0.14em] text-[var(--accent)] uppercase">Data &amp; growth engineering</p>
+          <span class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--text-muted)] uppercase">Read the case study &rarr;</span>
+        </div>
+        <h3 class="font-display text-3xl font-medium text-[var(--text)] md:text-4xl">Outbound Lead Pipeline</h3>
+        <div class="flex flex-col gap-2.5">
+          {
+            outbound.map((row) => (
+              <p class="text-base leading-relaxed text-[var(--text-muted)]">
+                <span class="font-mono-ui mr-2 text-[var(--accent)]">{row.letter}:</span>
+                {row.text}
+              </p>
+            ))
+          }
+        </div>
+        <div class="flex flex-wrap gap-2 pt-1">
+          {["Python", "Outscraper", "MillionVerifier", "Claude API"].map((tag) => (
+            <span class="font-mono-ui border border-[var(--border)] px-2.5 py-1 text-[11px] text-[var(--text-muted)]">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </a>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <a
+          id="p-slickonboard"
+          href="https://slickonboard.com"
+          target="_blank"
+          rel="noopener"
+          class="group flex scroll-mt-24 flex-col border border-[var(--border)] bg-[var(--surface)]"
+        >
+          <div class="aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
+            <Image src={slickShot} alt="SlickOnboard marketing homepage" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+          </div>
+          <div class="flex flex-col gap-2.5 p-6">
+            <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">Onboarding automation</p>
+            <h4 class="font-display text-xl font-medium text-[var(--text)]">SlickOnboard</h4>
+            <p class="text-sm leading-relaxed text-[var(--text-muted)]">
+              Agencies were losing days to back-and-forth just to collect a
+              new client's contract, files, and payment. Built a flow that
+              runs itself once a client signs — 40+ onboardings completed
+              with zero manual follow-up.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-0.5">
+              {["n8n", "OpenAI", "Supabase"].map((tag) => (
+                <span class="font-mono-ui border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--text-muted)]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </a>
+
         <a
           id="p-inner-universe"
           href="https://ourinneruniverse.com"
           target="_blank"
           rel="noopener"
-          class="group flex flex-1 flex-col border border-[var(--border)] bg-[var(--surface)] scroll-mt-24"
+          class="group flex scroll-mt-24 flex-col border border-[var(--border)] bg-[var(--surface)]"
         >
           <div class="aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
             <Image src={ouShot} alt="Our Inner Universe homepage" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
-          <div class="flex flex-col gap-2.5 p-5">
-            <h3 class="font-display text-xl font-medium text-[var(--text)]">Our Inner Universe</h3>
+          <div class="flex flex-col gap-2.5 p-6">
+            <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">Programmatic SEO</p>
+            <h4 class="font-display text-xl font-medium text-[var(--text)]">Our Inner Universe</h4>
             <p class="text-sm leading-relaxed text-[var(--text-muted)]">
-              Built a system that generates and manages 7,000+ pages from a
-              single data model.
+              Publishing thousands of accurate, unique self-discovery pages
+              by hand isn't possible solo. Built a system generating and
+              managing 7,000+ pages from a single data model — now pulling
+              24,000+ monthly organic sessions.
             </p>
             <div class="flex flex-wrap gap-1.5 pt-0.5">
               {["Astro", "Claude", "pSEO"].map((tag) => (
@@ -72,19 +149,22 @@ import sureskuShot from "../assets/projects/suresku.png";
 
         <a
           id="p-tinkletree"
-          href="https://tinkletreeco.com"
+          href="https://www.amazon.com/TinkleTree-Premium-Spiritual-Mandala-Chime/dp/B0FPWTWJQ5"
           target="_blank"
           rel="noopener"
-          class="group flex flex-1 flex-col border border-[var(--border)] bg-[var(--surface)] scroll-mt-24"
+          class="group flex scroll-mt-24 flex-col border border-[var(--border)] bg-[var(--surface)]"
         >
           <div class="aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
             <Image src={tinkleShot} alt="TinkleTree Co checkout redirect page" width={800} height={500} class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
-          <div class="flex flex-col gap-2.5 p-5">
-            <h3 class="font-display text-xl font-medium text-[var(--text)]">TinkleTree Co</h3>
+          <div class="flex flex-col gap-2.5 p-6">
+            <p class="font-mono-ui text-[11px] tracking-[0.1em] text-[var(--accent)] uppercase">E-commerce &middot; Amazon US launch</p>
+            <h4 class="font-display text-xl font-medium text-[var(--text)]">TinkleTree Co</h4>
             <p class="text-sm leading-relaxed text-[var(--text-muted)]">
-              Built the storefront and automated parts of the product and
-              email workflow.
+              Needed a real storefront and hands-off post-purchase emails,
+              not another templated theme. Built the storefront and
+              automated the product and email workflow — automated flows now
+              account for roughly 24% of monthly revenue.
             </p>
             <div class="flex flex-wrap gap-1.5 pt-0.5">
               {["Shopify", "Klaviyo"].map((tag) => (
