@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import headshot from "../assets/profile/headshot-suit.jpg";
+import iitLogo from "../assets/education/iit-patna.png";
+import georgetownLogo from "../assets/education/georgetown.jpg";
 ---
 
 <section id="top" class="bg-[var(--ink)] text-[var(--ink-text)]" style="font-family: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;">
@@ -36,6 +38,24 @@ import headshot from "../assets/profile/headshot-suit.jpg";
 
       <div class="aspect-[3/2] w-full max-w-[480px] justify-self-center overflow-hidden rounded-2xl md:justify-self-end">
         <Image src={headshot} alt="Dikshant Savant" width={1999} height={1333} class="h-full w-full object-cover" />
+      </div>
+    </div>
+
+    <div class="mt-14 flex flex-col gap-5 border-t border-[var(--ink-border)] pt-8 sm:flex-row sm:items-center sm:gap-10">
+      <span class="font-mono-ui shrink-0 text-xs tracking-[0.14em] text-[var(--ink-text-muted)] uppercase">Education</span>
+      <div class="flex flex-wrap items-center gap-x-9 gap-y-4">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white p-1.5">
+            <Image src={iitLogo} alt="IIT Patna" width={80} height={80} class="h-full w-full object-contain" />
+          </div>
+          <span class="text-sm text-[var(--ink-text)]">IIT Patna &middot; B.Tech, Electrical Engineering, 2016</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1">
+            <Image src={georgetownLogo} alt="Georgetown University, McDonough School of Business" width={80} height={80} class="h-full w-full object-contain" />
+          </div>
+          <span class="text-sm text-[var(--ink-text)]">Georgetown University, McDonough School of Business &middot; MBA, 2024</span>
+        </div>
       </div>
     </div>
   </div>
