@@ -30,16 +30,18 @@ const outboundParagraphs = [
       <span class="text-[13px] tracking-[0.18em] text-[var(--text-faint)] uppercase">05 projects</span>
     </div>
 
-    <a
+    <div
       id="p-nmab"
-      href="#case-flagship"
-      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
+      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
     >
       <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">01</div>
       <div class="flex flex-col gap-5">
         <div class="flex flex-wrap items-center justify-between gap-3">
           <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">NeverMissABooking&trade;</h3>
-          <span class="text-sm text-[var(--v2-accent)] transition-transform group-hover:translate-x-1">Read the case study &rarr;</span>
+          <div class="flex flex-wrap items-center gap-x-5 gap-y-1">
+            <a href="https://capablanca-ai.com" target="_blank" rel="noopener" class="group text-sm text-[var(--v2-accent)] transition-transform hover:translate-x-1">Visit capablanca-ai.com &nearr;</a>
+            <a href="#case-flagship" class="group text-sm text-[var(--v2-accent)] transition-transform hover:translate-x-1">Read the case study &rarr;</a>
+          </div>
         </div>
         <p class="text-xl leading-snug text-[var(--text)] md:text-2xl">
           A system for businesses that miss calls and lose customers because of it.
@@ -61,10 +63,10 @@ const outboundParagraphs = [
           ))}
         </div>
       </div>
-      <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={nmabShot} alt="NeverMissABooking marketing homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
+      <a href="https://capablanca-ai.com" target="_blank" rel="noopener" class="group aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
+        <Image src={nmabShot} alt="NeverMissABooking marketing homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]" />
+      </a>
+    </div>
 
     <a
       id="p-outbound"
