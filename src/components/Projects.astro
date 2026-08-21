@@ -8,17 +8,48 @@ import tinkleShot from "../assets/projects/tinkletreeco.png";
 import sureskuShot from "../assets/projects/suresku.png";
 import scoutreplyShot from "../assets/projects/scoutreply.png";
 
-const nmabParagraphs = [
-  "I originally built this for CDL schools. If someone calls while everyone's busy, the system responds automatically and keeps the conversation moving instead of letting that lead disappear into voicemail.",
-  "It handles missed calls, follow-ups, booking, reminders, and review requests.",
-  "I built the product, set up the automations, dealt with the Twilio compliance process, formed the company behind it, and got the first customers using it.",
+const par = (label: string, text: string) => ({ label, text });
+
+const nmabPAR = [
+  par("Problem", "Small businesses miss calls constantly, and whoever answers the phone first gets the customer. I originally built this for CDL driving schools, where staff are busy teaching when a call comes in and the lead disappears into voicemail."),
+  par("Action", "I built a locked four-module system that auto-responds to missed calls, books appointments, sends no-show reminders, and follows up for reviews. Getting it ready for real customers also meant setting up the company: forming an LLC, filing for an EIN, and getting through Twilio's A2P compliance process."),
+  par("Result", "4 clients live at $997/month each, and the first customers are already using the same core system."),
 ];
 
-const outboundParagraphs = [
-  "The raw data was messy. Businesses were duplicated, emails were missing, and the provider's \"verified\" emails weren't as verified as I expected.",
-  "So I built a pipeline that filters the list first, uses AI where the decision is less obvious, finds emails, and then checks those emails independently before they go anywhere near a sending campaign.",
-  "One useful thing I found: on one batch of 11,298 contacts, the vendor's own \"verified\" label was only right 59.4% of the time.",
-  "That was the whole point of building the extra verification step.",
+const tinklePAR = [
+  par("Problem", "I wanted my own product business, something I could see through from sourcing to an actual Amazon shelf, not just client work."),
+  par("Action", "I built the storefront, sourced a supplier, handled packaging and listings, and automated the product and email workflow so it didn't need me running it by hand."),
+  par("Result", "The product launched on Amazon US, and the automated email flows now contribute roughly 24% of monthly revenue."),
+];
+
+const ouPAR = [
+  par("Problem", "I like astrology and metaphysics, and wanted to build something people could actually use to understand themselves better. It was a long-time pet project I kept coming back to."),
+  par("Action", "I built the data structure and page-generation system behind the site, then worked through the harder problem: making each page feel personal instead of generic."),
+  par("Result", "It finally went live recently, and it's out in the world now, bringing in organic traffic."),
+];
+
+const slickPAR = [
+  par("Problem", "I got tired of doing the same client onboarding steps over and over, every time a new client signed."),
+  par("Action", "I built a system that collects what it needs the moment a client signs up and sets up their workspace automatically, without me chasing them through email."),
+  par("Result", "It's been used for 40+ onboardings so far, hands-off every time."),
+];
+
+const surePAR = [
+  par("Problem", "Amazon private-label sellers keep launching products nobody buys, often after they've already lost money on one bad launch."),
+  par("Action", "I built a tool that reads every review in a category, sorts the top complaints, and shows sellers exactly which product gaps they can actually win."),
+  par("Result", "It's live now, taking its first sellers at $30 for lifetime access."),
+];
+
+const outboundPAR = [
+  par("Problem", "I had a big list of businesses, but no way to know which contacts were actually safe to email. The data was messy, duplicated, and the provider's \"verified\" emails weren't as verified as I expected."),
+  par("Action", "I built a 9-stage pipeline that filters the list first, uses AI where the decision is less obvious, finds emails, and then independently checks those emails again before anything goes near a sending campaign."),
+  par("Result", "Found the vendor's own \"verified\" label was only right 59.4% of the time on an 11,298-contact batch, caught before it became a deliverability problem. The corrected list gets a 16% reply rate across 60 sending inboxes."),
+];
+
+const scoutreplyPAR = [
+  par("Problem", "I kept losing track of who I needed to follow up with after connecting on LinkedIn, and generic CRMs are way too heavy for something this simple."),
+  par("Action", "I designed a personal CRM that color-codes contacts by how overdue they are, keeps a running timeline per person, and resets a 14-day clock every time I log a follow-up."),
+  par("Result", "It's still a wireframe I built to prove the idea out. Haven't shipped it as a real product yet."),
 ];
 ---
 
@@ -44,19 +75,14 @@ const outboundParagraphs = [
             <a href="#case-flagship" class="group text-sm text-[var(--v2-accent)] transition-transform hover:translate-x-1">Read the case study &rarr;</a>
           </div>
         </div>
-        <p class="text-xl leading-snug text-[var(--text)] md:text-2xl">
-          A system for businesses that miss calls and lose customers because of it.
-        </p>
         <div class="flex max-w-[70ch] flex-col gap-2.5">
           {
-            nmabParagraphs.map((text) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">{text}</p>
+            nmabPAR.map((row) => (
+              <p class="text-lg leading-relaxed text-[var(--text-body)]">
+                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
+              </p>
             ))
           }
-        </div>
-        <div class="flex flex-wrap gap-x-6 gap-y-1 pt-1 text-lg text-[var(--text)]">
-          <span>4 clients</span>
-          <span>$1,200/month in recurring revenue</span>
         </div>
         <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
           {["GoHighLevel", "Claude", "Twilio", "Python"].map((tag) => (
@@ -80,13 +106,15 @@ const outboundParagraphs = [
       <div class="flex flex-col gap-5">
         <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">E-commerce &middot; Amazon US launch</p>
         <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">TinkleTree Co</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          I built and launched my own product brand. That meant doing a
-          bit of everything: the product, supplier conversations,
-          packaging, listings, the storefront, Amazon, email flows, and
-          trying to get people to actually buy it. The automated email
-          flows now contribute roughly 24% of monthly revenue.
-        </p>
+        <div class="flex max-w-[70ch] flex-col gap-2.5">
+          {
+            tinklePAR.map((row) => (
+              <p class="text-lg leading-relaxed text-[var(--text-body)]">
+                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
+              </p>
+            ))
+          }
+        </div>
         <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
           {["Shopify", "Klaviyo", "Amazon"].map((tag) => (
             <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
@@ -109,15 +137,15 @@ const outboundParagraphs = [
       <div class="flex flex-col gap-5">
         <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Programmatic SEO</p>
         <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">Our Inner Universe</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          I wanted to see if I could build thousands of useful pages
-          without writing thousands of pages. The answer was yes, but it
-          took more work than just asking AI to generate content. I built
-          the data structure and page-generation system behind the site,
-          then worked through the problem of making thousands of pages
-          actually useful and distinct. The site now has 7,000+ pages and
-          brings in organic traffic.
-        </p>
+        <div class="flex max-w-[70ch] flex-col gap-2.5">
+          {
+            ouPAR.map((row) => (
+              <p class="text-lg leading-relaxed text-[var(--text-body)]">
+                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
+              </p>
+            ))
+          }
+        </div>
         <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
           {["Astro", "Claude", "Programmatic SEO"].map((tag) => (
             <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
@@ -140,13 +168,15 @@ const outboundParagraphs = [
       <div class="flex flex-col gap-5">
         <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Onboarding automation</p>
         <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">SlickOnboard</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          I got tired of doing the same client onboarding steps over and
-          over. So I built a system for it. Once a client signs up, the
-          onboarding flow collects what it needs and sets up the workspace
-          without someone having to chase the client through email. It's
-          been used for 40+ onboardings so far.
-        </p>
+        <div class="flex max-w-[70ch] flex-col gap-2.5">
+          {
+            slickPAR.map((row) => (
+              <p class="text-lg leading-relaxed text-[var(--text-body)]">
+                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
+              </p>
+            ))
+          }
+        </div>
         <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
           {["n8n", "OpenAI", "Supabase"].map((tag) => (
             <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
@@ -169,11 +199,15 @@ const outboundParagraphs = [
       <div class="flex flex-col gap-5">
         <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Beta</p>
         <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">sureSKU</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          Reads every Amazon review in a category, sorts the top
-          complaints, and shows private-label sellers which product gaps
-          they can actually win.
-        </p>
+        <div class="flex max-w-[70ch] flex-col gap-2.5">
+          {
+            surePAR.map((row) => (
+              <p class="text-lg leading-relaxed text-[var(--text-body)]">
+                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
+              </p>
+            ))
+          }
+        </div>
         <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
           {["Amazon FBA", "Review mining"].map((tag) => (
             <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
@@ -196,20 +230,14 @@ const outboundParagraphs = [
           <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">Outbound Lead Pipeline</h3>
           <span class="text-sm text-[var(--v2-accent)] transition-transform group-hover:translate-x-1">Read the case study &rarr;</span>
         </div>
-        <p class="text-xl leading-snug text-[var(--text)] md:text-2xl">
-          I had a big list of businesses. The problem was figuring out which contacts were actually safe to email.
-        </p>
         <div class="flex max-w-[70ch] flex-col gap-2.5">
           {
-            outboundParagraphs.map((text) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">{text}</p>
+            outboundPAR.map((row) => (
+              <p class="text-lg leading-relaxed text-[var(--text-body)]">
+                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
+              </p>
             ))
           }
-        </div>
-        <div class="flex flex-wrap gap-x-6 gap-y-1 pt-1 text-lg text-[var(--text)]">
-          <span>11,298 contacts checked</span>
-          <span>60 sending inboxes</span>
-          <span>16% reply rate on the corrected list</span>
         </div>
         <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
           {["Python", "Outscraper", "MillionVerifier", "Claude"].map((tag) => (
@@ -230,14 +258,15 @@ const outboundParagraphs = [
       <div class="flex flex-col gap-5">
         <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Concept &middot; LinkedIn follow-up CRM</p>
         <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">ScoutReply.com</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          A simple personal CRM for staying on top of LinkedIn connections.
-          The dashboard color-codes contacts by days since last touch
-          (green, yellow, red), with a due-today list up top. Add a person
-          with their name, company, contact method, and how we met, then
-          every interaction lands on their timeline. Logging a follow-up
-          resets a 14-day clock.
-        </p>
+        <div class="flex max-w-[70ch] flex-col gap-2.5">
+          {
+            scoutreplyPAR.map((row) => (
+              <p class="text-lg leading-relaxed text-[var(--text-body)]">
+                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
+              </p>
+            ))
+          }
+        </div>
         <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
           {["Claude", "Personal CRM", "Wireframe"].map((tag) => (
             <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
