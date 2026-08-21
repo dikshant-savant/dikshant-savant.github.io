@@ -69,11 +69,127 @@ const outboundParagraphs = [
     </div>
 
     <a
-      id="p-outbound"
-      href="#case"
-      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
+      id="p-tinkletree"
+      href="https://www.amazon.com/TinkleTree-Premium-Spiritual-Mandala-Chime/dp/B0FPWTWJQ5"
+      target="_blank"
+      rel="noopener"
+      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
     >
       <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">02</div>
+      <div class="flex flex-col gap-5">
+        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">E-commerce &middot; Amazon US launch</p>
+        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">TinkleTree Co</h3>
+        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
+          I built and launched my own product brand. That meant doing a
+          bit of everything: the product, supplier conversations,
+          packaging, listings, the storefront, Amazon, email flows, and
+          trying to get people to actually buy it. The automated email
+          flows now contribute roughly 24% of monthly revenue.
+        </p>
+        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
+          {["Shopify", "Klaviyo", "Amazon"].map((tag) => (
+            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
+          ))}
+        </div>
+      </div>
+      <div class="aspect-[2000/1066] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
+        <Image src={tinkleShot} alt="TinkleTree Co product listing on Amazon" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
+      </div>
+    </a>
+
+    <a
+      id="p-inner-universe"
+      href="https://ourinneruniverse.com"
+      target="_blank"
+      rel="noopener"
+      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
+    >
+      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">03</div>
+      <div class="flex flex-col gap-5">
+        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Programmatic SEO</p>
+        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">Our Inner Universe</h3>
+        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
+          I wanted to see if I could build thousands of useful pages
+          without writing thousands of pages. The answer was yes, but it
+          took more work than just asking AI to generate content. I built
+          the data structure and page-generation system behind the site,
+          then worked through the problem of making thousands of pages
+          actually useful and distinct. The site now has 7,000+ pages and
+          brings in organic traffic.
+        </p>
+        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
+          {["Astro", "Claude", "Programmatic SEO"].map((tag) => (
+            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
+          ))}
+        </div>
+      </div>
+      <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
+        <Image src={ouShot} alt="Our Inner Universe homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
+      </div>
+    </a>
+
+    <a
+      id="p-slickonboard"
+      href="https://slickonboard.com"
+      target="_blank"
+      rel="noopener"
+      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
+    >
+      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">04</div>
+      <div class="flex flex-col gap-5">
+        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Onboarding automation</p>
+        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">SlickOnboard</h3>
+        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
+          I got tired of doing the same client onboarding steps over and
+          over. So I built a system for it. Once a client signs up, the
+          onboarding flow collects what it needs and sets up the workspace
+          without someone having to chase the client through email. It's
+          been used for 40+ onboardings so far.
+        </p>
+        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
+          {["n8n", "OpenAI", "Supabase"].map((tag) => (
+            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
+          ))}
+        </div>
+      </div>
+      <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
+        <Image src={slickShot} alt="SlickOnboard marketing homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
+      </div>
+    </a>
+
+    <a
+      id="p-suresku"
+      href="https://suresku.com/"
+      target="_blank"
+      rel="noopener"
+      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
+    >
+      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">05</div>
+      <div class="flex flex-col gap-5">
+        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Beta</p>
+        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">sureSKU</h3>
+        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
+          Reads every Amazon review in a category, sorts the top
+          complaints, and shows private-label sellers which product gaps
+          they can actually win.
+        </p>
+        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
+          {["Amazon FBA", "Review mining"].map((tag) => (
+            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
+          ))}
+        </div>
+      </div>
+      <div class="aspect-[1600/660] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
+        <Image src={sureskuShot} alt="sureSKU Amazon review-mining dashboard" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
+      </div>
+    </a>
+
+    <a
+      id="p-outbound"
+      href="#case"
+      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border-strong)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
+    >
+      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">06</div>
       <div class="flex flex-col gap-5">
         <div class="flex flex-wrap items-center justify-between gap-3">
           <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">Outbound Lead Pipeline</h3>
@@ -102,122 +218,6 @@ const outboundParagraphs = [
       </div>
       <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
         <Image src={mvShot} alt="MillionVerifier homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <a
-      id="p-slickonboard"
-      href="https://slickonboard.com"
-      target="_blank"
-      rel="noopener"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">03</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Onboarding automation</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">SlickOnboard</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          I got tired of doing the same client onboarding steps over and
-          over. So I built a system for it. Once a client signs up, the
-          onboarding flow collects what it needs and sets up the workspace
-          without someone having to chase the client through email. It's
-          been used for 40+ onboardings so far.
-        </p>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["n8n", "OpenAI", "Supabase"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={slickShot} alt="SlickOnboard marketing homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <a
-      id="p-inner-universe"
-      href="https://ourinneruniverse.com"
-      target="_blank"
-      rel="noopener"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">04</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Programmatic SEO</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">Our Inner Universe</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          I wanted to see if I could build thousands of useful pages
-          without writing thousands of pages. The answer was yes, but it
-          took more work than just asking AI to generate content. I built
-          the data structure and page-generation system behind the site,
-          then worked through the problem of making thousands of pages
-          actually useful and distinct. The site now has 7,000+ pages and
-          brings in organic traffic.
-        </p>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["Astro", "Claude", "Programmatic SEO"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={ouShot} alt="Our Inner Universe homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <a
-      id="p-tinkletree"
-      href="https://www.amazon.com/TinkleTree-Premium-Spiritual-Mandala-Chime/dp/B0FPWTWJQ5"
-      target="_blank"
-      rel="noopener"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">05</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">E-commerce &middot; Amazon US launch</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">TinkleTree Co</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          I built and launched my own product brand. That meant doing a
-          bit of everything: the product, supplier conversations,
-          packaging, listings, the storefront, Amazon, email flows, and
-          trying to get people to actually buy it. The automated email
-          flows now contribute roughly 24% of monthly revenue.
-        </p>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["Shopify", "Klaviyo", "Amazon"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[2000/1066] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={tinkleShot} alt="TinkleTree Co product listing on Amazon" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <a
-      id="p-suresku"
-      href="https://suresku.com/"
-      target="_blank"
-      rel="noopener"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border-strong)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">06</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Beta</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">sureSKU</h3>
-        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
-          Reads every Amazon review in a category, sorts the top
-          complaints, and shows private-label sellers which product gaps
-          they can actually win.
-        </p>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["Amazon FBA", "Review mining"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[1600/660] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={sureskuShot} alt="sureSKU Amazon review-mining dashboard" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
       </div>
     </a>
   </div>
