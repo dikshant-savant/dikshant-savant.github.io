@@ -13,13 +13,15 @@ const stats = [
       stats.map((stat, i) => (
         <div
           class:list={[
-            "flex flex-col gap-2.5 border-[var(--border)] py-12 pr-4 md:pr-8",
+            "flex flex-col gap-2.5 border-[var(--border)] px-4 py-12 md:px-10",
+            i === 0 && "pl-0",
+            i === 3 && "md:pr-0",
             i < 3 && "md:border-r",
             i % 2 === 0 && "border-r md:border-r-0",
             i < 2 && "border-b md:border-b-0",
           ]}
         >
-          <span class="text-4xl leading-none tracking-tight whitespace-nowrap text-[var(--text)] md:text-6xl">
+          <span class="text-[clamp(1.5rem,3.6vw,3.25rem)] leading-none tracking-tight break-words text-[var(--text)]">
             {stat.value}<span class="text-[var(--v2-accent)]">{stat.suffix}</span>
           </span>
           <span class="text-[13px] tracking-[0.18em] text-[var(--text-muted)] uppercase">

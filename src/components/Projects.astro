@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import nmabShot from "../assets/projects/nevermissabooking.png";
+import mvShot from "../assets/projects/millionverifier.png";
 import slickShot from "../assets/projects/slickonboard-app.png";
 import ouShot from "../assets/projects/ourinneruniverse.png";
 import tinkleShot from "../assets/projects/tinkletreeco.png";
@@ -31,7 +33,7 @@ const outboundParagraphs = [
     <a
       id="p-nmab"
       href="#case-flagship"
-      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:gap-12"
+      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
     >
       <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">01</div>
       <div class="flex flex-col gap-5">
@@ -59,12 +61,15 @@ const outboundParagraphs = [
           ))}
         </div>
       </div>
+      <div class="aspect-[4/3] overflow-hidden border border-[var(--border)]">
+        <Image src={nmabShot} alt="NeverMissABooking marketing homepage" width={800} height={600} class="h-full w-full object-cover object-top" />
+      </div>
     </a>
 
     <a
       id="p-outbound"
       href="#case"
-      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:gap-12"
+      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
     >
       <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">02</div>
       <div class="flex flex-col gap-5">
@@ -92,6 +97,9 @@ const outboundParagraphs = [
             <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
           ))}
         </div>
+      </div>
+      <div class="aspect-[4/3] overflow-hidden border border-[var(--border)]">
+        <Image src={mvShot} alt="MillionVerifier homepage" width={800} height={600} class="h-full w-full object-cover object-top" />
       </div>
     </a>
 
