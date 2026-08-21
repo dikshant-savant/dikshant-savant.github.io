@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const pipelineStages = [
   "Get the data",
   "Remove bad fits",
@@ -30,50 +32,45 @@ const stats = [
 ];
 ---
 
-<section id="case" class="font-serif scroll-mt-16 border-b border-[var(--border-strong)] bg-[var(--surface-alt)] py-24">
-  <div class="mx-auto max-w-6xl px-6">
-    <div class="flex flex-col gap-7 border-b border-[var(--border)] pb-14">
-      <p class="text-sm tracking-[0.22em] text-[var(--v2-accent)] uppercase">Case study 02</p>
-      <h2 class="max-w-[24ch] text-4xl leading-[1.06] tracking-tight text-[var(--text)] md:text-6xl">
-        Building an outbound pipeline that <span class="text-[var(--v2-accent)]">doesn't trust vendor labels</span>
-      </h2>
-    </div>
+<section id="case" class="scroll-mt-16 border-b border-[var(--hairline)] bg-[var(--canvas)] py-20 md:py-28">
+  <div class="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <span class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">Case study</span>
+    <h2 class="display-lg mt-4 max-w-[22ch] text-3xl text-[var(--ink)] md:text-[44px]">
+      Building an outbound pipeline that doesn't trust vendor labels.
+    </h2>
 
-    <div class="grid gap-10 py-14 md:grid-cols-3">
+    <div class="mt-12 grid gap-8 md:grid-cols-3">
       {
         blocks.map((block) => (
-          <div class="flex flex-col gap-3.5">
-            <p class="text-sm tracking-[0.18em] text-[var(--text-faint)] uppercase">{block.label}</p>
-            <p class="text-lg leading-[1.68] text-[var(--text-body)] text-pretty">{block.body}</p>
+          <div class="flex flex-col gap-2.5">
+            <p class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">{block.label}</p>
+            <p class="text-[15px] leading-relaxed text-[var(--body)]">{block.body}</p>
           </div>
         ))
       }
     </div>
 
-    <div class="flex flex-col gap-2 border border-[var(--border)] bg-[var(--bg)] p-6 md:flex-row md:items-center md:gap-0">
+    <div class="mt-12 flex flex-col gap-2 rounded-xl bg-[var(--canvas-soft)] p-6 md:flex-row md:items-center md:gap-3">
       {
         pipelineStages.map((stage, i) => (
           <>
-            <div class="flex flex-1 items-center justify-center border-b border-[var(--border)] py-3 text-center text-base text-[var(--text)] md:border-r md:border-b-0 md:last:border-r-0">
+            <div class="flex flex-1 items-center justify-center rounded-lg bg-[var(--canvas)] py-3 text-center text-sm text-[var(--ink)] shadow-card">
               {stage}
             </div>
+            {i < pipelineStages.length - 1 && (
+              <Icon name="ph:arrow-right" class="hidden h-3.5 w-3.5 shrink-0 text-[var(--mute)] md:block" />
+            )}
           </>
         ))
       }
     </div>
 
-    <div class="grid grid-cols-3 border-t border-[var(--border)]">
+    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
       {
-        stats.map((stat, i) => (
-          <div
-            class:list={[
-              "flex flex-col gap-2 py-10 pr-4 md:pr-8",
-              i < 2 && "border-r border-[var(--border)]",
-              i > 0 && "pl-4 md:pl-8",
-            ]}
-          >
-            <span class="text-4xl leading-none whitespace-nowrap text-[var(--text)] md:text-5xl">{stat.value}</span>
-            <span class="text-[13px] tracking-[0.18em] text-[var(--text-muted)] uppercase">{stat.label}</span>
+        stats.map((stat) => (
+          <div class="rounded-xl bg-[var(--canvas-soft)] p-6">
+            <span class="display-lg block text-3xl text-[var(--ink)] md:text-4xl">{stat.value}</span>
+            <span class="font-mono-ui mt-1.5 block text-xs text-[var(--mute)]">{stat.label}</span>
           </div>
         ))
       }

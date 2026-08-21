@@ -1,38 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  /* Editorial "v2" palette, used everywhere except the hero */
-  --bg: #f2efe8;
-  --surface: #f2efe8;
-  --surface-alt: #e7e2d8;
-  --text: #14120f;
-  --text-body: #312d27;
-  --text-muted: #6e6659;
-  --text-faint: #8a8175;
-  --border: #d6d0c4;
-  --border-strong: #14120f;
-  --v2-accent: #a8201a;
+  /* Surfaces */
+  --canvas: #ffffff;
+  --canvas-soft: #fafafa;
+  --canvas-soft-2: #f5f5f5;
+  --hairline: #ebebeb;
+  --hairline-strong: #a1a1a1;
 
-  /* Hero-only tokens (do not repurpose, do not change) */
-  --accent: oklch(0.55 0.13 250);
-  --accent-hover: oklch(0.62 0.13 250);
-  --accent-soft: oklch(0.94 0.03 250);
-  --accent-contrast: #ffffff;
+  /* Ink (also the single primary CTA color) */
+  --ink: #171717;
+  --on-primary: #ffffff;
 
-  --ink: #111113;
-  --ink-text: #f4f4f2;
-  --ink-text-muted: #a6adb8;
-  --ink-border: rgba(255, 255, 255, 0.12);
-  --ink-accent: oklch(0.72 0.13 250);
+  /* Text */
+  --body: #4d4d4d;
+  --mute: #888888;
+
+  /* Semantic */
+  --link: #0070f3;
+  --link-deep: #0761d1;
+
+  /* Signature mesh-gradient stops (used at hero scale only) — barely-there pastel tints */
+  --grad-blue: rgba(147, 197, 253, 0.22);
+  --grad-purple: rgba(216, 180, 254, 0.18);
+  --grad-pink: rgba(249, 168, 212, 0.16);
+  --grad-amber: rgba(253, 224, 171, 0.15);
 }
 
 * {
-  border-color: var(--border);
+  border-color: var(--hairline);
 }
 
 html {
   scroll-behavior: smooth;
   color-scheme: light;
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -42,26 +44,60 @@ html {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Times New Roman", Times, serif;
+  overflow-x: hidden;
+  background: var(--canvas-soft);
+  color: var(--ink);
+  font-family: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "ss02";
 }
 
 ::selection {
-  background: var(--v2-accent);
-  color: var(--bg);
+  background: var(--ink);
+  color: var(--canvas-soft);
 }
 
-/* Hero-only fonts, kept exactly as before the v2 reskin */
 .font-mono-ui {
   font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 
-.font-display {
-  font-family: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+/* Display headlines: negative tracking is part of the voice */
+.display-xl {
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.display-lg {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.125;
+}
+.display-md {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
 }
 
-/* Used by every section except the hero */
-.font-serif {
-  font-family: "Times New Roman", Times, serif;
+/* Elevation: stacked shadows + inset hairline ring, never a single heavy drop */
+.shadow-card {
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 1px 1px rgba(0, 0, 0, 0.02),
+    0 2px 2px rgba(0, 0, 0, 0.04),
+    0 8px 8px -8px rgba(0, 0, 0, 0.04);
+}
+.shadow-card-lg {
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.04),
+    0 8px 16px -4px rgba(0, 0, 0, 0.06);
+}
+
+/* Signature mesh gradient: barely-there pastel corners fading to white, hero scale only */
+.mesh-gradient {
+  background-image:
+    radial-gradient(at 10% 10%, var(--grad-blue) 0%, transparent 40%),
+    radial-gradient(at 90% 5%, var(--grad-purple) 0%, transparent 38%),
+    radial-gradient(at 95% 90%, var(--grad-pink) 0%, transparent 38%),
+    radial-gradient(at 5% 95%, var(--grad-amber) 0%, transparent 40%);
+  filter: blur(120px);
 }

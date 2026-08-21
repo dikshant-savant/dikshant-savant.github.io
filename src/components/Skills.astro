@@ -2,7 +2,7 @@
 const groups = [
   {
     name: "AI",
-    tools: "OpenAI · Claude · structured outputs · prompt workflows",
+    tools: "OpenAI, Claude, structured outputs, prompt workflows",
     proof: [
       { label: "SlickOnboard", href: "#p-slickonboard" },
       { label: "Our Inner Universe", href: "#p-inner-universe" },
@@ -12,7 +12,7 @@ const groups = [
   },
   {
     name: "Data",
-    tools: "Python · SQL · scraping · enrichment · verification · data cleaning",
+    tools: "Python, SQL, scraping, enrichment, verification, data cleaning",
     proof: [
       { label: "Outbound pipeline", href: "#p-outbound" },
       { label: "Our Inner Universe", href: "#p-inner-universe" },
@@ -21,7 +21,7 @@ const groups = [
   },
   {
     name: "Automation",
-    tools: "GoHighLevel · n8n · Make · Zapier · APIs · webhooks",
+    tools: "GoHighLevel, n8n, Make, Zapier, APIs, webhooks",
     proof: [
       { label: "NeverMissABooking", href: "#p-nmab" },
       { label: "SlickOnboard", href: "#p-slickonboard" },
@@ -30,7 +30,7 @@ const groups = [
   },
   {
     name: "Web & infrastructure",
-    tools: "Supabase · Vercel · Cloudflare · DNS · cron jobs · databases",
+    tools: "Supabase, Vercel, Cloudflare, DNS, cron jobs, databases",
     proof: [
       { label: "SlickOnboard", href: "#p-slickonboard" },
       { label: "Our Inner Universe", href: "#p-inner-universe" },
@@ -39,7 +39,7 @@ const groups = [
   },
   {
     name: "Growth",
-    tools: "Cold email · deliverability · SEO · lifecycle email · landing pages · positioning",
+    tools: "Cold email, deliverability, SEO, lifecycle email, landing pages, positioning",
     proof: [
       { label: "Outbound pipeline", href: "#p-outbound" },
       { label: "Our Inner Universe", href: "#p-inner-universe" },
@@ -49,26 +49,23 @@ const groups = [
 ];
 ---
 
-<section id="skills" class="font-serif scroll-mt-16 border-b border-[var(--border-strong)] py-24">
-  <div class="mx-auto max-w-6xl px-6">
-    <div class="flex items-baseline justify-between border-b border-[var(--border-strong)] pb-5">
-      <h2 class="text-lg tracking-[0.22em] text-[var(--text)] uppercase">
-        Things I know how to work with
-      </h2>
-      <span class="hidden text-[13px] tracking-[0.18em] text-[var(--text-faint)] uppercase sm:inline">Every skill links to proof</span>
-    </div>
+<section id="skills" class="scroll-mt-16 border-b border-[var(--hairline)] bg-[var(--canvas-soft)] py-20 md:py-28">
+  <div class="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <h2 class="display-lg max-w-[16ch] text-3xl text-[var(--ink)] md:text-[40px]">
+      Things I know how to work with.
+    </h2>
 
-    <div class="flex flex-col">
+    <div class="mt-12 overflow-hidden rounded-xl bg-[var(--canvas)] shadow-card">
       {
         groups.map((group) => (
-          <div class="grid items-baseline gap-6 border-b border-[var(--border)] py-8 md:grid-cols-[210px_1fr_280px]">
-            <p class="text-base tracking-[0.16em] text-[var(--v2-accent)] uppercase">{group.name}</p>
-            <p class="text-xl leading-[1.6] text-[var(--text-body)]">{group.tools}</p>
-            <div class="flex flex-col gap-1.5 text-lg italic">
+          <div class="grid items-baseline gap-3 border-b border-[var(--hairline)] p-6 last:border-b-0 md:grid-cols-[200px_1fr_auto] md:gap-8 md:p-8">
+            <p class="text-base font-medium text-[var(--ink)]">{group.name}</p>
+            <p class="text-[15px] leading-relaxed text-[var(--body)]">{group.tools}</p>
+            <div class="flex flex-wrap gap-1.5">
               {group.proof.map((p) => (
                 <a
                   href={p.href}
-                  class="w-fit border-b border-[var(--border)] pb-0.5 text-[var(--text)] transition-colors hover:text-[var(--v2-accent)]"
+                  class="rounded-full bg-[var(--canvas-soft)] px-2.5 py-1 text-xs text-[var(--body)] transition-colors hover:bg-[var(--ink)] hover:text-[var(--on-primary)]"
                 >
                   {p.label}
                 </a>

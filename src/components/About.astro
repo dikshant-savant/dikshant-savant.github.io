@@ -5,20 +5,13 @@ import headshot from "../assets/profile/headshot.png";
 const chips = ["Self-taught", "3 years building and shipping", "Working remotely"];
 ---
 
-<section id="about" class="font-serif scroll-mt-16 border-b border-[var(--border-strong)] py-24">
-  <div class="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[240px_1fr] md:gap-14">
-    <div class="flex flex-col gap-3">
-      <div class="aspect-[4/5] overflow-hidden border border-[var(--border)]">
-        <Image src={headshot} alt="Dikshant Savant" width={480} height={600} class="h-full w-full object-cover object-top" />
-      </div>
-      <span class="text-sm tracking-[0.18em] text-[var(--text-faint)] uppercase">About</span>
-    </div>
-
-    <div class="flex flex-col gap-8">
-      <p class="max-w-[24ch] text-3xl leading-[1.25] tracking-tight text-[var(--text)] md:text-4xl">
-        I build things when I can't stop thinking about <span class="text-[var(--v2-accent)]">how they could work better</span>.
+<section id="about" class="scroll-mt-16 border-b border-[var(--hairline)] bg-[var(--canvas)] py-20 md:py-28">
+  <div class="mx-auto grid max-w-[1400px] gap-12 px-6 md:grid-cols-[1fr_220px] md:gap-16 lg:px-10">
+    <div class="flex flex-col gap-6 md:order-1">
+      <p class="display-md max-w-[22ch] text-2xl text-[var(--ink)] md:text-[32px]">
+        I like to build things.
       </p>
-      <div class="flex max-w-[60ch] flex-col gap-4 text-xl leading-relaxed text-[var(--text-body)]">
+      <div class="flex max-w-[62ch] flex-col gap-4 text-lg leading-relaxed text-[var(--body)]">
         <p>
           I'm mostly self-taught, and I've spent the last few years jumping
           between products, automation, AI, e-commerce, SEO, and growth.
@@ -36,13 +29,17 @@ const chips = ["Self-taught", "3 years building and shipping", "Working remotely
           keep doing it manually.
         </p>
       </div>
-      <div class="flex flex-wrap gap-x-8 gap-y-2 border-t border-[var(--border)] pt-6 text-sm tracking-[0.16em] text-[var(--text-muted)] uppercase">
+      <div class="flex flex-wrap gap-2 pt-2">
         {
           chips.map((chip) => (
-            <span>{chip}</span>
+            <span class="rounded-full bg-[var(--canvas-soft)] px-3 py-1.5 text-sm text-[var(--body)]">{chip}</span>
           ))
         }
       </div>
+    </div>
+
+    <div class="overflow-hidden rounded-xl shadow-card md:order-2 md:self-start" style="aspect-ratio: 4 / 3;">
+      <Image src={headshot} alt="Dikshant Savant" width={440} height={330} class="h-full w-full object-cover object-top" />
     </div>
   </div>
 </section>

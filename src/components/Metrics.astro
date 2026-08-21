@@ -1,32 +1,19 @@
 ---
 const stats = [
-  { value: "24", suffix: "%", label: "Cold email reply rate vs. ~3% industry benchmark" },
-  { value: "$9,600", suffix: "/mo", label: "Ops spend avoided by catching a bad vendor claim before scale-up" },
-  { value: "98", suffix: "%+", label: "Email verification accuracy, independently re-checked" },
-  { value: "18,000", suffix: "+", label: "Pages, records & contacts live in production" },
+  { value: "24%", label: "Cold email reply rate vs. ~3% industry benchmark" },
+  { value: "$9,600/mo", label: "Ops spend avoided by catching a bad vendor claim before scale-up" },
+  { value: "98%+", label: "Email verification accuracy, independently re-checked" },
+  { value: "18,000+", label: "Pages, records and contacts live in production" },
 ];
 ---
 
-<section class="font-serif border-b border-[var(--border-strong)]">
-  <div class="mx-auto grid max-w-6xl grid-cols-2 px-6 md:grid-cols-4">
+<section class="border-b border-[var(--hairline)] bg-[var(--canvas-soft)]">
+  <div class="mx-auto grid max-w-[1400px] grid-cols-2 divide-x divide-y divide-[var(--hairline)] px-6 lg:grid-cols-4 lg:divide-y-0">
     {
-      stats.map((stat, i) => (
-        <div
-          class:list={[
-            "flex flex-col gap-2.5 border-[var(--border)] px-4 py-12 md:px-10",
-            i === 0 && "pl-0",
-            i === 3 && "md:pr-0",
-            i < 3 && "md:border-r",
-            i % 2 === 0 && "border-r md:border-r-0",
-            i < 2 && "border-b md:border-b-0",
-          ]}
-        >
-          <span class="text-[clamp(1.15rem,3.6vw,3.25rem)] leading-none tracking-tight whitespace-nowrap text-[var(--text)]">
-            {stat.value}<span class="text-[var(--v2-accent)]">{stat.suffix}</span>
-          </span>
-          <span class="text-[13px] tracking-[0.18em] text-[var(--text-muted)] uppercase">
-            {stat.label}
-          </span>
+      stats.map((stat) => (
+        <div class="flex flex-col gap-2 py-10 pr-4 pl-1 first:pl-0 md:pr-8">
+          <span class="display-lg text-2xl text-[var(--ink)] sm:text-3xl md:text-4xl">{stat.value}</span>
+          <span class="font-mono-ui text-xs leading-snug text-[var(--mute)]">{stat.label}</span>
         </div>
       ))
     }

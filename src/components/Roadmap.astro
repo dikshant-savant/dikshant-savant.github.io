@@ -7,17 +7,15 @@ const items = [
 ];
 ---
 
-<section class="font-serif border-b border-[var(--border-strong)] py-16">
-  <div class="mx-auto max-w-6xl px-6">
-    <p class="text-sm tracking-[0.18em] text-[var(--text-faint)] uppercase">
-      Also messing around with
-    </p>
-    <div class="mt-6 grid divide-y divide-[var(--border)] border-t border-[var(--border)] sm:grid-cols-2 sm:divide-y-0 sm:border-t-0 lg:grid-cols-4">
+<section class="border-b border-[var(--hairline)] bg-[var(--canvas-soft)] py-16">
+  <div class="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <p class="text-base font-medium text-[var(--ink)]">Also messing around with</p>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {
-        items.map((item, i) => (
-          <div class:list={["py-5 sm:py-0 sm:pt-0", i > 0 && "sm:border-l sm:border-[var(--border)] sm:pl-6"]}>
-            <p class="text-lg text-[var(--text)]">{item.name}</p>
-            <p class="mt-1.5 text-base leading-relaxed text-[var(--text-muted)]">{item.body}</p>
+        items.map((item) => (
+          <div class="rounded-xl bg-[var(--canvas)] p-5 shadow-card">
+            <p class="text-[15px] font-medium text-[var(--ink)]">{item.name}</p>
+            <p class="mt-1.5 text-sm leading-relaxed text-[var(--mute)]">{item.body}</p>
           </div>
         ))
       }

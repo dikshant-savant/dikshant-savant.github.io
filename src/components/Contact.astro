@@ -1,39 +1,32 @@
 ---
 const channels = [
   { label: "Email", value: "dikshantsavant@gmail.com", href: "mailto:dikshantsavant@gmail.com" },
+  { label: "Phone", value: "+91-9868-123-165", href: "tel:+919868123165" },
   { label: "LinkedIn", value: "/in/dikshant-savant", href: "https://www.linkedin.com/in/dikshant-savant/" },
   { label: "GitHub", value: "@dikshant-savant", href: "https://github.com/dikshant-savant" },
 ];
 ---
 
-<section id="contact" class="font-serif scroll-mt-16 py-24">
-  <div class="mx-auto flex max-w-6xl flex-col gap-12 px-6">
-    <div class="flex flex-col gap-6">
-      <h2 class="max-w-[20ch] text-4xl leading-[1.06] tracking-tight text-[var(--text)] md:text-6xl">
-        <span class="text-[var(--v2-accent)]">Want to work together?</span>
-      </h2>
-      <p class="max-w-[48ch] text-xl leading-[1.6] text-[var(--text-body)]">
-        I'm interested in product, growth, automation, and AI work. If you
-        have something you're trying to build or fix, send me a message.
-      </p>
-    </div>
+<section id="contact" class="scroll-mt-16 bg-[var(--ink)] py-20 text-[var(--on-primary)] md:py-28">
+  <div class="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <h2 class="display-lg max-w-[16ch] text-4xl md:text-[56px]">
+      Want to work together?
+    </h2>
+    <p class="mt-5 max-w-[46ch] text-lg leading-[1.55] text-white/70">
+      I'm interested in product, growth, automation, and AI work. If you have something you're trying to build or fix, send me a message.
+    </p>
 
-    <div class="grid grid-cols-1 border-t border-[var(--border-strong)] sm:grid-cols-3">
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {
-        channels.map((c, i) => (
+        channels.map((c) => (
           <a
             href={c.href}
             target={c.href.startsWith("http") ? "_blank" : undefined}
             rel={c.href.startsWith("http") ? "noopener" : undefined}
-            class:list={[
-              "flex flex-col gap-2 py-9",
-              i === 0 && "sm:border-r sm:border-[var(--border)] sm:pr-8",
-              i === 1 && "sm:border-r sm:border-[var(--border)] sm:px-8",
-              i === 2 && "sm:pl-8",
-            ]}
+            class="flex flex-col gap-2 rounded-xl bg-white/[0.06] p-6 transition-colors hover:bg-white/[0.1]"
           >
-            <span class="text-sm tracking-[0.18em] text-[var(--text-faint)] uppercase">{c.label}</span>
-            <span class="text-2xl break-words text-[var(--text)] transition-colors hover:text-[var(--v2-accent)]">{c.value}</span>
+            <span class="font-mono-ui text-xs tracking-tight text-white/50">{c.label}</span>
+            <span class="text-xl break-words">{c.value}</span>
           </a>
         ))
       }
@@ -41,8 +34,8 @@ const channels = [
   </div>
 </section>
 
-<footer class="font-serif border-t border-[var(--border)] py-8">
-  <div class="mx-auto max-w-6xl px-6 text-center text-sm tracking-[0.08em] text-[var(--text-muted)] uppercase">
-    Dikshant Savant &middot; India &middot; Working remotely
+<footer class="border-t border-[var(--hairline)] bg-[var(--canvas)] py-8">
+  <div class="mx-auto max-w-[1400px] px-6 text-center text-sm text-[var(--mute)] lg:px-10">
+    Dikshant Savant
   </div>
 </footer>

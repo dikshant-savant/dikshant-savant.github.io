@@ -10,272 +10,175 @@ import scoutreplyShot from "../assets/projects/scoutreply.png";
 
 const par = (label: string, text: string) => ({ label, text });
 
-const nmabPAR = [
-  par("Problem", "Small businesses miss calls constantly, and whoever answers the phone first gets the customer. I originally built this for CDL driving schools, where staff are busy teaching when a call comes in and the lead disappears into voicemail."),
-  par("Action", "I built a locked four-module system that auto-responds to missed calls, books appointments, sends no-show reminders, and follows up for reviews. Getting it ready for real customers also meant setting up the company: forming an LLC, filing for an EIN, and getting through Twilio's A2P compliance process."),
-  par("Result", "4 clients live at $997/month each, and the first customers are already using the same core system."),
-];
-
-const tinklePAR = [
-  par("Problem", "I wanted my own product business, something I could see through from sourcing to an actual Amazon shelf, not just client work."),
-  par("Action", "I built the storefront, sourced a supplier, handled packaging and listings, and automated the product and email workflow so it didn't need me running it by hand."),
-  par("Result", "The product launched on Amazon US, and the automated email flows now contribute roughly 24% of monthly revenue."),
-];
-
-const ouPAR = [
-  par("Problem", "I like astrology and metaphysics, and wanted to build something people could actually use to understand themselves better. It was a long-time pet project I kept coming back to."),
-  par("Action", "I built the data structure and page-generation system behind the site, then worked through the harder problem: making each page feel personal instead of generic."),
-  par("Result", "It finally went live recently, and it's out in the world now, bringing in organic traffic."),
-];
-
-const slickPAR = [
-  par("Problem", "I got tired of doing the same client onboarding steps over and over, every time a new client signed."),
-  par("Action", "I built a system that collects what it needs the moment a client signs up and sets up their workspace automatically, without me chasing them through email."),
-  par("Result", "It's been used for 40+ onboardings so far, hands-off every time."),
-];
-
-const surePAR = [
-  par("Problem", "Amazon private-label sellers keep launching products nobody buys, often after they've already lost money on one bad launch."),
-  par("Action", "I built a tool that reads every review in a category, sorts the top complaints, and shows sellers exactly which product gaps they can actually win."),
-  par("Result", "It's live now, taking its first sellers at $30 for lifetime access."),
-];
-
-const outboundPAR = [
-  par("Problem", "I had a big list of businesses, but no way to know which contacts were actually safe to email. The data was messy, duplicated, and the provider's \"verified\" emails weren't as verified as I expected."),
-  par("Action", "I built a 9-stage pipeline that filters the list first, uses AI where the decision is less obvious, finds emails, and then independently checks those emails again before anything goes near a sending campaign."),
-  par("Result", "Found the vendor's own \"verified\" label was only right 59.4% of the time on an 11,298-contact batch, caught before it became a deliverability problem. The corrected list gets a 16% reply rate across 60 sending inboxes."),
-];
-
-const scoutreplyPAR = [
-  par("Problem", "I kept losing track of who I needed to follow up with after connecting on LinkedIn, and generic CRMs are way too heavy for something this simple."),
-  par("Action", "I designed a personal CRM that color-codes contacts by how overdue they are, keeps a running timeline per person, and resets a 14-day clock every time I log a follow-up."),
-  par("Result", "It's still a wireframe I built to prove the idea out. Haven't shipped it as a real product yet."),
+const projects = [
+  {
+    id: "p-nmab",
+    title: "AI Receptionist Agency (US) - NeverMissABooking™",
+    href: "https://capablanca-ai.com",
+    linkLabel: "Visit capablanca-ai.com",
+    caseHref: "#case-flagship",
+    tags: ["GoHighLevel", "Claude", "Twilio", "Python"],
+    image: nmabShot,
+    imageAlt: "NeverMissABooking marketing homepage",
+    imageAspect: "16/10",
+    rows: [
+      par("Problem", "Small businesses miss calls constantly, and whoever answers the phone first gets the customer. I originally built this for CDL driving schools, where staff are busy teaching when a call comes in and the lead disappears into voicemail."),
+      par("Action", "I built a locked four-module system that auto-responds to missed calls, books appointments, sends no-show reminders, and follows up for reviews. Getting it ready for real customers also meant setting up the company: forming an LLC, filing for an EIN, and getting through Twilio's A2P compliance process."),
+      par("Result", "4 clients live at $997/month each, and the first customers are already using the same core system."),
+    ],
+  },
+  {
+    id: "p-tinkletree",
+    title: "Amazon USA Product Launch - TinkleTree",
+    href: "https://www.amazon.com/TinkleTree-Premium-Spiritual-Mandala-Chime/dp/B0FPWTWJQ5",
+    linkLabel: "View on Amazon",
+    tags: ["Shopify", "Klaviyo", "Amazon"],
+    image: tinkleShot,
+    imageAlt: "TinkleTree Co wind chime product photo",
+    imageAspect: "540/538",
+    rows: [
+      par("Problem", "I wanted my own product business, something I could see through from sourcing to an actual Amazon shelf, not just client work."),
+      par("Action", "I built the storefront, sourced a supplier, handled packaging and listings, and automated the product and email workflow so it didn't need me running it by hand."),
+      par("Result", "Generating $2k/mo in revenue."),
+    ],
+  },
+  {
+    id: "p-inner-universe",
+    title: "Numerology Website - Our Inner Universe",
+    href: "https://ourinneruniverse.com",
+    linkLabel: "Visit ourinneruniverse.com",
+    tags: ["Astro", "Claude", "Programmatic SEO"],
+    image: ouShot,
+    imageAlt: "Our Inner Universe homepage",
+    imageAspect: "16/10",
+    rows: [
+      par("Problem", "I like astrology and metaphysics, and wanted to build something people could actually use to understand themselves better. It was a long-time pet project I kept coming back to."),
+      par("Action", "I built the data structure and page-generation system behind the site, then worked through the harder problem: making each page feel personal instead of generic."),
+      par("Result", "It finally went live recently, and it's out in the world now, bringing in organic traffic."),
+    ],
+  },
+  {
+    id: "p-slickonboard",
+    title: "Onboarding SaaS for Freelancers and Marketing Agencies - SlickOnboard",
+    href: "https://slickonboard.com",
+    linkLabel: "Visit slickonboard.com",
+    tags: ["n8n", "OpenAI", "Supabase"],
+    image: slickShot,
+    imageAlt: "SlickOnboard marketing homepage",
+    imageAspect: "860/460",
+    rows: [
+      par("Problem", "I got tired of doing the same client onboarding steps over and over, every time a new client signed."),
+      par("Action", "I built a system that collects what it needs the moment a client signs up and sets up their workspace automatically, without me chasing them through email."),
+      par("Result", "It's been used for 40+ onboardings so far, hands-off every time."),
+    ],
+  },
+  {
+    id: "p-suresku",
+    title: "Amazon Market Gap Research & Analysis SaaS - sureSKU",
+    href: "https://suresku.com/",
+    linkLabel: "Visit suresku.com",
+    tags: ["Amazon FBA", "Review mining"],
+    image: sureskuShot,
+    imageAlt: "sureSKU Amazon review-mining dashboard",
+    imageAspect: "1100/520",
+    rows: [
+      par("Problem", "Amazon private-label sellers keep launching products nobody buys, often after they've already lost money on one bad launch."),
+      par("Action", "I built a tool that reads every review in a category, sorts the top complaints, and shows sellers exactly which product gaps they can actually win."),
+      par("Result", "It's live now, taking its first sellers at $30 for lifetime access."),
+    ],
+  },
+  {
+    id: "p-outbound",
+    title: "Streamlining Outbound Marketing Leads Pipeline",
+    caseHref: "#case",
+    tags: ["Python", "Outscraper", "MillionVerifier", "Claude"],
+    image: mvShot,
+    imageAlt: "MillionVerifier homepage",
+    imageAspect: "1400/760",
+    rows: [
+      par("Problem", "I had a big list of businesses, but no way to know which contacts were actually safe to email. The data was messy, duplicated, and the provider's \"verified\" emails weren't as verified as I expected."),
+      par("Action", "I built a 9-stage pipeline that filters the list first, uses AI where the decision is less obvious, finds emails, and then independently checks those emails again before anything goes near a sending campaign."),
+      par("Result", "Found the vendor's own \"verified\" label was only right 59.4% of the time on an 11,298-contact batch, caught before it became a deliverability problem. The corrected list gets a 16% reply rate across 60 sending inboxes."),
+    ],
+  },
+  {
+    id: "p-scoutreply",
+    title: "CRM for Job Seekers - ScoutReply.com",
+    badge: "Concept",
+    tags: ["Claude", "Personal CRM", "Wireframe"],
+    image: scoutreplyShot,
+    imageAlt: "ScoutReply.com homepage",
+    imageAspect: "1600/700",
+    rows: [
+      par("Problem", "I kept losing track of who I needed to follow up with after connecting on LinkedIn, and generic CRMs are way too heavy for something this simple."),
+      par("Action", "I designed a personal CRM that color-codes contacts by how overdue they are, keeps a running timeline per person, and resets a 14-day clock every time I log a follow-up."),
+      par("Result", "It's still a wireframe I built to prove the idea out. Haven't shipped it as a real product yet."),
+    ],
+  },
 ];
 ---
 
-<section id="work" class="font-serif scroll-mt-16 border-b border-[var(--border-strong)] py-24">
-  <div class="mx-auto max-w-6xl px-6">
-    <div class="flex items-baseline justify-between border-b border-[var(--border-strong)] pb-5">
-      <h2 class="text-lg tracking-[0.22em] text-[var(--text)] uppercase">
-        Selected work
-      </h2>
-      <span class="text-[13px] tracking-[0.18em] text-[var(--text-faint)] uppercase">07 projects</span>
-    </div>
+<section id="work" class="scroll-mt-16 border-b border-[var(--hairline)] bg-[var(--canvas-soft)] py-20 md:py-28">
+  <div class="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <h2 class="display-lg max-w-[14ch] text-3xl text-[var(--ink)] md:text-[40px]">
+      Selected work.
+    </h2>
+    <p class="mt-3 max-w-[52ch] text-lg text-[var(--body)]">
+      Seven things I've built, from a productized SaaS with paying clients to a wireframe I'm still proving out.
+    </p>
 
-    <div
-      id="p-nmab"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">01</div>
-      <div class="flex flex-col gap-5">
-        <div class="flex flex-wrap items-center justify-between gap-3">
-          <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">NeverMissABooking&trade;</h3>
-          <div class="flex flex-wrap items-center gap-x-5 gap-y-1">
-            <a href="https://capablanca-ai.com" target="_blank" rel="noopener" class="group text-sm text-[var(--v2-accent)] transition-transform hover:translate-x-1">Visit capablanca-ai.com &nearr;</a>
-            <a href="#case-flagship" class="group text-sm text-[var(--v2-accent)] transition-transform hover:translate-x-1">Read the case study &rarr;</a>
+    <div class="mt-14 flex flex-col gap-8">
+      {
+        projects.map((p) => (
+          <div id={p.id} class="scroll-mt-24 overflow-hidden rounded-xl bg-[var(--canvas)] shadow-card-lg md:grid md:grid-cols-[1.1fr_1fr]">
+            <div class="overflow-hidden bg-[var(--canvas-soft-2)]" style={`aspect-ratio: ${p.imageAspect.replace("/", " / ")};`}>
+              <Image
+                src={p.image}
+                alt={p.imageAlt}
+                width={1200}
+                height={Math.round(1200 * (Number(p.imageAspect.split("/")[1]) / Number(p.imageAspect.split("/")[0])))}
+                fit="cover"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="flex flex-col gap-4 p-7 md:p-9">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <h3 class="display-md text-2xl text-[var(--ink)]">{p.title}</h3>
+                {p.badge && (
+                  <span class="font-mono-ui shrink-0 rounded-full bg-[var(--canvas-soft)] px-2.5 py-1 text-[11px] text-[var(--body)]">{p.badge}</span>
+                )}
+              </div>
+
+              <div class="flex flex-col gap-2.5">
+                {p.rows.map((row) => (
+                  <p class="text-[15px] leading-relaxed text-[var(--body)]">
+                    <span class="font-medium text-[var(--ink)]">{row.label}:</span> {row.text}
+                  </p>
+                ))}
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                {p.tags.map((tag) => (
+                  <span class="font-mono-ui rounded-full bg-[var(--canvas-soft)] px-2.5 py-1 text-[11px] text-[var(--body)]">{tag}</span>
+                ))}
+              </div>
+
+              <div class="flex flex-wrap items-center gap-x-5 gap-y-1 pt-1">
+                {p.href && (
+                  <a href={p.href} target="_blank" rel="noopener" class="text-sm font-medium text-[var(--link)] underline-offset-2 hover:underline">
+                    {p.linkLabel} &#8594;
+                  </a>
+                )}
+                {p.caseHref && (
+                  <a href={p.caseHref} class="text-sm font-medium text-[var(--link)] underline-offset-2 hover:underline">
+                    Read the case study &#8594;
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="flex max-w-[70ch] flex-col gap-2.5">
-          {
-            nmabPAR.map((row) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">
-                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
-              </p>
-            ))
-          }
-        </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["GoHighLevel", "Claude", "Twilio", "Python"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <a href="https://capablanca-ai.com" target="_blank" rel="noopener" class="group aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={nmabShot} alt="NeverMissABooking marketing homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]" />
-      </a>
-    </div>
-
-    <a
-      id="p-tinkletree"
-      href="https://www.amazon.com/TinkleTree-Premium-Spiritual-Mandala-Chime/dp/B0FPWTWJQ5"
-      target="_blank"
-      rel="noopener"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">02</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">E-commerce &middot; Amazon US launch</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">TinkleTree Co</h3>
-        <div class="flex max-w-[70ch] flex-col gap-2.5">
-          {
-            tinklePAR.map((row) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">
-                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
-              </p>
-            ))
-          }
-        </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["Shopify", "Klaviyo", "Amazon"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[2000/1066] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={tinkleShot} alt="TinkleTree Co product listing on Amazon" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <a
-      id="p-inner-universe"
-      href="https://ourinneruniverse.com"
-      target="_blank"
-      rel="noopener"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">03</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Programmatic SEO</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">Our Inner Universe</h3>
-        <div class="flex max-w-[70ch] flex-col gap-2.5">
-          {
-            ouPAR.map((row) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">
-                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
-              </p>
-            ))
-          }
-        </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["Astro", "Claude", "Programmatic SEO"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={ouShot} alt="Our Inner Universe homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <a
-      id="p-slickonboard"
-      href="https://slickonboard.com"
-      target="_blank"
-      rel="noopener"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">04</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Onboarding automation</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">SlickOnboard</h3>
-        <div class="flex max-w-[70ch] flex-col gap-2.5">
-          {
-            slickPAR.map((row) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">
-                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
-              </p>
-            ))
-          }
-        </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["n8n", "OpenAI", "Supabase"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={slickShot} alt="SlickOnboard marketing homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <a
-      id="p-suresku"
-      href="https://suresku.com/"
-      target="_blank"
-      rel="noopener"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">05</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Beta</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">sureSKU</h3>
-        <div class="flex max-w-[70ch] flex-col gap-2.5">
-          {
-            surePAR.map((row) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">
-                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
-              </p>
-            ))
-          }
-        </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["Amazon FBA", "Review mining"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[1600/660] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={sureskuShot} alt="sureSKU Amazon review-mining dashboard" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <a
-      id="p-outbound"
-      href="#case"
-      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">06</div>
-      <div class="flex flex-col gap-5">
-        <div class="flex flex-wrap items-center justify-between gap-3">
-          <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">Outbound Lead Pipeline</h3>
-          <span class="text-sm text-[var(--v2-accent)] transition-transform group-hover:translate-x-1">Read the case study &rarr;</span>
-        </div>
-        <div class="flex max-w-[70ch] flex-col gap-2.5">
-          {
-            outboundPAR.map((row) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">
-                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
-              </p>
-            ))
-          }
-        </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["Python", "Outscraper", "MillionVerifier", "Claude"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={mvShot} alt="MillionVerifier homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
-      </div>
-    </a>
-
-    <div
-      id="p-scoutreply"
-      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border-strong)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
-    >
-      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">07</div>
-      <div class="flex flex-col gap-5">
-        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Concept &middot; LinkedIn follow-up CRM</p>
-        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">ScoutReply.com</h3>
-        <div class="flex max-w-[70ch] flex-col gap-2.5">
-          {
-            scoutreplyPAR.map((row) => (
-              <p class="text-lg leading-relaxed text-[var(--text-body)]">
-                <strong class="font-semibold text-[var(--text)]">{row.label}:</strong> {row.text}
-              </p>
-            ))
-          }
-        </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
-          {["Claude", "Personal CRM", "Wireframe"].map((tag) => (
-            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div class="aspect-[1600/700] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
-        <Image src={scoutreplyShot} alt="ScoutReply follow-up queue dashboard" width={800} height={350} fit="contain" class="h-full w-full object-contain" />
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>
