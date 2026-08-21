@@ -6,6 +6,7 @@ import slickShot from "../assets/projects/slickonboard-app.png";
 import ouShot from "../assets/projects/ourinneruniverse.png";
 import tinkleShot from "../assets/projects/tinkletreeco.png";
 import sureskuShot from "../assets/projects/suresku.png";
+import scoutreplyShot from "../assets/projects/scoutreply.png";
 
 const nmabParagraphs = [
   "I originally built this for CDL schools. If someone calls while everyone's busy, the system responds automatically and keeps the conversation moving instead of letting that lead disappear into voicemail.",
@@ -27,7 +28,7 @@ const outboundParagraphs = [
       <h2 class="text-lg tracking-[0.22em] text-[var(--text)] uppercase">
         Selected work
       </h2>
-      <span class="text-[13px] tracking-[0.18em] text-[var(--text-faint)] uppercase">05 projects</span>
+      <span class="text-[13px] tracking-[0.18em] text-[var(--text-faint)] uppercase">07 projects</span>
     </div>
 
     <div
@@ -187,7 +188,7 @@ const outboundParagraphs = [
     <a
       id="p-outbound"
       href="#case"
-      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border-strong)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
+      class="group grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
     >
       <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">06</div>
       <div class="flex flex-col gap-5">
@@ -220,5 +221,32 @@ const outboundParagraphs = [
         <Image src={mvShot} alt="MillionVerifier homepage" width={800} height={600} fit="contain" class="h-full w-full object-contain" />
       </div>
     </a>
+
+    <div
+      id="p-scoutreply"
+      class="grid scroll-mt-24 grid-cols-[clamp(48px,9vw,90px)_1fr] items-start gap-6 border-b border-[var(--border-strong)] py-14 md:grid-cols-[clamp(48px,9vw,90px)_1fr_1fr] md:gap-12"
+    >
+      <div class="text-4xl leading-[0.8] text-[var(--border)] md:text-5xl">07</div>
+      <div class="flex flex-col gap-5">
+        <p class="text-sm tracking-[0.18em] text-[var(--v2-accent)] uppercase">Concept &middot; LinkedIn follow-up CRM</p>
+        <h3 class="text-3xl leading-tight tracking-tight text-[var(--text)] md:text-4xl">ScoutReply.com</h3>
+        <p class="max-w-[40ch] text-xl leading-relaxed text-[var(--text-body)]">
+          A simple personal CRM for staying on top of LinkedIn connections.
+          The dashboard color-codes contacts by days since last touch
+          (green, yellow, red), with a due-today list up top. Add a person
+          with their name, company, contact method, and how we met, then
+          every interaction lands on their timeline. Logging a follow-up
+          resets a 14-day clock.
+        </p>
+        <div class="flex flex-wrap gap-x-5 gap-y-1.5 pt-1 text-sm tracking-[0.14em] text-[var(--text-muted)] uppercase">
+          {["Claude", "Personal CRM", "Wireframe"].map((tag) => (
+            <span class="border-b border-[var(--border)] pb-0.5">{tag}</span>
+          ))}
+        </div>
+      </div>
+      <div class="aspect-[1600/700] overflow-hidden border border-[var(--border)] bg-[var(--surface-alt)]">
+        <Image src={scoutreplyShot} alt="ScoutReply follow-up queue dashboard" width={800} height={350} fit="contain" class="h-full w-full object-contain" />
+      </div>
+    </div>
   </div>
 </section>

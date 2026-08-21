@@ -26,3 +26,7 @@ pnpm-debug.log*
 # legacy standalone drafts, superseded by the Astro site
 Portfolio Redesign (standalone).html
 Portfolio v2 (standalone).html
+
+# wireframe exports, screenshots already committed under src/assets
+LinkedIn Follow-up Queue.html
+LinkedIn Follow-up Queue copy.html
