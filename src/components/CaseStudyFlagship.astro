@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import nmabShot from "../assets/projects/nevermissabooking.png";
+
 const modules = [
   "Missed-call capture & response",
   "AI-driven booking",
@@ -27,41 +30,59 @@ const stats = [
 ];
 ---
 
-<section id="case-flagship" class="scroll-mt-16 bg-[var(--ink)] py-20 text-[var(--on-primary)] md:py-28">
+<section id="case-flagship" class="scroll-mt-16 border-b border-[var(--hairline)] bg-[var(--canvas)] py-20 md:py-28">
   <div class="mx-auto max-w-[1400px] px-6 lg:px-10">
-    <span class="font-mono-ui text-xs tracking-tight text-white/50">Case study</span>
-    <h2 class="display-lg mt-4 max-w-[20ch] text-3xl md:text-[44px]">
-      NeverMissABooking: from an idea to something customers could use.
+    <h2 class="display-lg max-w-[14ch] text-3xl text-[var(--ink)] md:text-[40px]">
+      Case studies.
     </h2>
+    <p class="mt-3 max-w-[52ch] text-lg text-[var(--body)]">
+      Three of the projects above, in more depth: the problem, what I actually built, and what happened.
+    </p>
 
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      {
-        blocks.map((block) => (
-          <div class="flex flex-col gap-2.5">
-            <p class="font-mono-ui text-xs tracking-tight text-white/50">{block.label}</p>
-            <p class="text-[15px] leading-relaxed text-white/80">{block.body}</p>
-          </div>
-        ))
-      }
+    <div class="mt-14 grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+      <div>
+        <div class="inline-flex items-center gap-3">
+          <span class="font-mono-ui flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--hairline)] text-xs text-[var(--mute)]">01</span>
+          <span class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">Case study</span>
+        </div>
+        <h2 class="display-lg mt-4 max-w-[18ch] text-3xl text-[var(--ink)] md:text-[44px]">
+          NeverMissABooking: from an idea to something customers could use.
+        </h2>
+        <p class="mt-5 max-w-[46ch] text-lg leading-[1.55] text-[var(--body)]">
+          A missed-call system for CDL driving schools, built solo from first workflow sketch to paying customers.
+        </p>
+      </div>
+      <div class="overflow-hidden rounded-2xl bg-[var(--canvas-soft-2)] shadow-card-lg" style="aspect-ratio: 16 / 10;">
+        <Image src={nmabShot} alt="NeverMissABooking marketing homepage" width={800} height={500} class="h-full w-full object-cover" />
+      </div>
     </div>
 
-    <div class="mt-12 rounded-xl bg-white/[0.06] p-6">
-      {
-        modules.map((mod, i) => (
-          <div class="flex items-center gap-4 border-b border-white/10 py-3 last:border-b-0">
-            <span class="font-mono-ui text-xs text-white/40">0{i + 1}</span>
-            <span class="text-[15px] text-white/90">{mod}</span>
-          </div>
-        ))
-      }
+    <div class="mt-14 overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--canvas-soft)] shadow-card-lg md:mt-20">
+      <div class="grid gap-8 p-8 md:grid-cols-3 md:p-10">
+        {
+          blocks.map((block) => (
+            <div class="flex flex-col gap-2.5">
+              <p class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">{block.label}</p>
+              <p class="text-[15px] leading-relaxed text-[var(--body)]">{block.body}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="flex flex-wrap gap-2 border-t border-[var(--hairline)] p-8 md:p-10 md:pt-6">
+        {
+          modules.map((mod) => (
+            <span class="font-mono-ui rounded-full bg-[var(--canvas)] px-3 py-1.5 text-xs text-[var(--body)] shadow-card">{mod}</span>
+          ))
+        }
+      </div>
     </div>
 
     <div class="mt-8 grid grid-cols-2 gap-4">
       {
         stats.map((stat) => (
-          <div class="rounded-xl bg-white/[0.06] p-6">
-            <span class="display-lg block text-3xl md:text-4xl">{stat.value}</span>
-            <span class="font-mono-ui mt-1.5 block text-xs text-white/50">{stat.label}</span>
+          <div class="rounded-xl border border-[var(--hairline)] bg-[var(--canvas-soft)] p-6">
+            <span class="display-lg block text-3xl text-[var(--ink)] md:text-4xl">{stat.value}</span>
+            <span class="font-mono-ui mt-1.5 block text-xs text-[var(--mute)]">{stat.label}</span>
           </div>
         ))
       }

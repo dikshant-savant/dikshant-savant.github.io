@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+import tinkleShot from "../assets/projects/tinkletreeco.png";
+
+const modules = [
+  "Supplier sourcing & packaging",
+  "Shopify storefront",
+  "Amazon listing & optimization",
+  "Automated email flows (Klaviyo)",
+];
+
+const blocks = [
+  {
+    label: "Problem",
+    body: "I wanted my own product business, something I could see all the way through from sourcing to an actual Amazon shelf, not just client work I was doing for other people.",
+  },
+  {
+    label: "Action",
+    body: "I found a supplier, handled packaging and compliance, built the Shopify storefront, and set up the Amazon listing myself. Then I automated the post-purchase email flow in Klaviyo so review requests and upsells didn't need me running them by hand.",
+  },
+  {
+    label: "Result",
+    body: "The product is live on Amazon US with a 5.0-star rating, and it's generating $2,000/month in revenue.",
+  },
+];
+
+const stats = [
+  { value: "$2,000/mo", label: "Revenue" },
+  { value: "5.0 / 5", label: "Amazon rating" },
+  { value: "7", label: "Reviews" },
+];
+---
+
+<section id="case-tinkletree" class="scroll-mt-16 border-b border-[var(--hairline)] bg-[var(--canvas)] py-20 md:py-28">
+  <div class="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+      <div>
+        <div class="inline-flex items-center gap-3">
+          <span class="font-mono-ui flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--hairline)] text-xs text-[var(--mute)]">03</span>
+          <span class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">Case study</span>
+        </div>
+        <h2 class="display-lg mt-4 max-w-[18ch] text-3xl text-[var(--ink)] md:text-[44px]">
+          TinkleTree: sourcing to an Amazon shelf, end to end.
+        </h2>
+        <p class="mt-5 max-w-[46ch] text-lg leading-[1.55] text-[var(--body)]">
+          A physical product built solo, from supplier sourcing to a live Amazon listing with a 5.0-star rating.
+        </p>
+      </div>
+      <div class="overflow-hidden rounded-2xl bg-[var(--canvas-soft-2)] shadow-card-lg" style="aspect-ratio: 4 / 3;">
+        <Image src={tinkleShot} alt="TinkleTree Co wind chime product photo" width={800} height={600} class="h-full w-full object-cover" />
+      </div>
+    </div>
+
+    <div class="mt-14 overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--canvas-soft)] shadow-card-lg md:mt-20">
+      <div class="grid gap-8 p-8 md:grid-cols-3 md:p-10">
+        {
+          blocks.map((block) => (
+            <div class="flex flex-col gap-2.5">
+              <p class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">{block.label}</p>
+              <p class="text-[15px] leading-relaxed text-[var(--body)]">{block.body}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="flex flex-wrap gap-2 border-t border-[var(--hairline)] p-8 md:p-10 md:pt-6">
+        {
+          modules.map((mod) => (
+            <span class="font-mono-ui rounded-full bg-[var(--canvas)] px-3 py-1.5 text-xs text-[var(--body)] shadow-card">{mod}</span>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      {
+        stats.map((stat) => (
+          <div class="rounded-xl border border-[var(--hairline)] bg-[var(--canvas-soft)] p-6">
+            <span class="display-lg block text-3xl text-[var(--ink)] md:text-4xl">{stat.value}</span>
+            <span class="font-mono-ui mt-1.5 block text-xs text-[var(--mute)]">{stat.label}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

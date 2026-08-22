@@ -10,10 +10,14 @@ import georgetownLogo from "../assets/education/georgetown.jpg";
   <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--canvas)]" aria-hidden="true"></div>
 
   <div class="relative mx-auto max-w-[1400px] px-6 pt-20 pb-16 md:pt-24 lg:px-10">
-    <div class="grid items-center gap-12 md:grid-cols-[1.1fr_400px] md:gap-16">
+    <div class="grid items-center gap-12 md:grid-cols-[1fr_480px] md:gap-16">
       <div class="flex flex-col items-start text-left">
-        <div class="inline-flex items-center gap-2 rounded-full border border-[var(--hairline)] bg-[var(--canvas)]/80 px-4 py-1.5 shadow-card backdrop-blur-sm">
-          <span class="font-mono-ui text-xs tracking-tight text-[var(--body)]">AI Product Manager</span>
+        <div class="flex flex-wrap items-center gap-2">
+          {["Founder", "Builder", "Growth Marketer"].map((role) => (
+            <span class="inline-flex items-center rounded-full border border-[var(--hairline)] bg-[var(--canvas)]/80 px-4 py-1.5 shadow-card backdrop-blur-sm font-mono-ui text-xs tracking-tight text-[var(--body)]">
+              {role}
+            </span>
+          ))}
         </div>
 
         <h1 class="display-xl mt-8 max-w-[16ch] text-[40px] text-[var(--ink)] sm:text-6xl md:text-[64px]">

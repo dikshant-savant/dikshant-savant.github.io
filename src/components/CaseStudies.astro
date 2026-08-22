@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import mvShot from "../assets/projects/millionverifier.png";
 
 const pipelineStages = [
   "Get the data",
@@ -32,43 +34,57 @@ const stats = [
 ];
 ---
 
-<section id="case" class="scroll-mt-16 border-b border-[var(--hairline)] bg-[var(--canvas)] py-20 md:py-28">
+<section id="case" class="scroll-mt-16 border-b border-[var(--hairline)] bg-[var(--canvas-soft)] py-20 md:py-28">
   <div class="mx-auto max-w-[1400px] px-6 lg:px-10">
-    <span class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">Case study</span>
-    <h2 class="display-lg mt-4 max-w-[22ch] text-3xl text-[var(--ink)] md:text-[44px]">
-      Building an outbound pipeline that doesn't trust vendor labels.
-    </h2>
-
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      {
-        blocks.map((block) => (
-          <div class="flex flex-col gap-2.5">
-            <p class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">{block.label}</p>
-            <p class="text-[15px] leading-relaxed text-[var(--body)]">{block.body}</p>
-          </div>
-        ))
-      }
+    <div class="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+      <div>
+        <div class="inline-flex items-center gap-3">
+          <span class="font-mono-ui flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--hairline)] bg-[var(--canvas)] text-xs text-[var(--mute)]">02</span>
+          <span class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">Case study</span>
+        </div>
+        <h2 class="display-lg mt-4 max-w-[18ch] text-3xl text-[var(--ink)] md:text-[44px]">
+          Building an outbound pipeline that doesn't trust vendor labels.
+        </h2>
+        <p class="mt-5 max-w-[46ch] text-lg leading-[1.55] text-[var(--body)]">
+          A 9-stage verification pipeline that catches bad vendor data before it becomes a deliverability problem.
+        </p>
+      </div>
+      <div class="overflow-hidden rounded-2xl bg-[var(--canvas-soft-2)] shadow-card-lg" style="aspect-ratio: 16 / 10;">
+        <Image src={mvShot} alt="MillionVerifier homepage" width={800} height={500} class="h-full w-full object-cover" />
+      </div>
     </div>
 
-    <div class="mt-12 flex flex-col gap-2 rounded-xl bg-[var(--canvas-soft)] p-6 md:flex-row md:items-center md:gap-3">
-      {
-        pipelineStages.map((stage, i) => (
-          <>
-            <div class="flex flex-1 items-center justify-center rounded-lg bg-[var(--canvas)] py-3 text-center text-sm text-[var(--ink)] shadow-card">
-              {stage}
+    <div class="mt-14 overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--canvas)] shadow-card-lg md:mt-20">
+      <div class="grid gap-8 p-8 md:grid-cols-3 md:p-10">
+        {
+          blocks.map((block) => (
+            <div class="flex flex-col gap-2.5">
+              <p class="font-mono-ui text-xs tracking-tight text-[var(--mute)]">{block.label}</p>
+              <p class="text-[15px] leading-relaxed text-[var(--body)]">{block.body}</p>
             </div>
-            {i < pipelineStages.length - 1 && (
-              <Icon name="ph:arrow-right" class="hidden h-3.5 w-3.5 shrink-0 text-[var(--mute)] md:block" />
-            )}
-          </>
-        ))
-      }
+          ))
+        }
+      </div>
+      <div class="flex flex-col gap-2 border-t border-[var(--hairline)] p-8 md:flex-row md:items-center md:gap-3 md:p-10 md:pt-6">
+        {
+          pipelineStages.map((stage, i) => (
+            <>
+              <div class="flex flex-1 items-center justify-center rounded-lg bg-[var(--canvas-soft)] py-3 text-center text-sm text-[var(--ink)] shadow-card">
+                {stage}
+              </div>
+              {i < pipelineStages.length - 1 && (
+                <Icon name="ph:arrow-right" class="hidden h-3.5 w-3.5 shrink-0 text-[var(--mute)] md:block" />
+              )}
+            </>
+          ))
+        }
+      </div>
     </div>
 
     <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
       {
         stats.map((stat) => (
-          <div class="rounded-xl bg-[var(--canvas-soft)] p-6">
+          <div class="rounded-xl border border-[var(--hairline)] bg-[var(--canvas)] p-6">
             <span class="display-lg block text-3xl text-[var(--ink)] md:text-4xl">{stat.value}</span>
             <span class="font-mono-ui mt-1.5 block text-xs text-[var(--mute)]">{stat.label}</span>
           </div>
